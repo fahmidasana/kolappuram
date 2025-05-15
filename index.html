@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willowbrook Village - A Hidden Paradise</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+scroll-behavior: smooth;
+}
+.hero-section {
+background-image: url('https://static.readdy.ai/image/6601009ef1df826df4db9b4b85227d01/a2a030f4e4f4efaf80a6d5180647e41a.png');
+background-size: cover;
+background-position: center;
+position: relative;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.1) 100%);
+}
+.playfair {
+font-family: 'Playfair Display', serif;
+}
+.stats-item {
+transition: all 0.3s ease;
+}
+.stats-item:hover {
+transform: translateY(-5px);
+}
+.gallery-item {
+overflow: hidden;
+}
+.gallery-item img {
+transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+transform: scale(1.05);
+}
+.event-card {
+transition: all 0.3s ease;
+}
+.event-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.attraction-card {
+transition: all 0.3s ease;
+overflow: hidden;
+}
+.attraction-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+.attraction-card img {
+transition: transform 0.5s ease;
+}
+.attraction-card:hover img {
+transform: scale(1.05);
+}
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 18px;
+height: 18px;
+background: #3b82f6;
+border-radius: 50%;
+cursor: pointer;
+}
+.custom-checkbox {
+position: relative;
+padding-left: 30px;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #e5e7eb;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+border-color: #3b82f6;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #3b82f6;
+border-color: #3b82f6;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.switch {
+position: relative;
+display: inline-block;
+width: 48px;
+height: 24px;
+}
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e5e7eb;
+transition: .4s;
+border-radius: 24px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #3b82f6;
+}
+input:checked + .slider:before {
+transform: translateX(24px);
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+animation: fadeIn 1s ease forwards;
+}
+.timeline-item {
+position: relative;
+}
+.timeline-item::before {
+content: '';
+position: absolute;
+width: 2px;
+background-color: #e5e7eb;
+top: 0;
+bottom: 0;
+left: 18px;
+}
+.timeline-dot {
+position: absolute;
+width: 14px;
+height: 14px;
+background-color: #3b82f6;
+border-radius: 50%;
+left: 12px;
+top: 24px;
+z-index: 1;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header/Navigation -->
+<header class="fixed w-full z-50 transition-all duration-300" id="navbar">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<div class="flex items-center">
+<h1 class="text-2xl font-['Pacifico'] text-primary">Kolappuram</h1>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#home" class="text-gray-800 hover:text-primary font-medium transition-colors">Home</a>
+<a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors">About</a>
+<a href="#attractions" class="text-gray-800 hover:text-primary font-medium transition-colors">Attractions</a>
+<!-- <a href="#culture" class="text-gray-800 hover:text-primary font-medium transition-colors">Culture</a>
+<a href="#events" class="text-gray-800 hover:text-primary font-medium transition-colors">Events</a> -->
+<a href="#contact" class="text-gray-800 hover:text-primary font-medium transition-colors">Contact</a>
+</nav>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="hero-section min-h-screen flex items-center">
+<div class="hero-overlay w-full h-full absolute inset-0"></div>
+<div class="container mx-auto px-4 py-20 relative z-10">
+<div class="w-full md:w-1/2 animate-fadeIn" style="animation-delay: 0.3s;">
+<h1 class="text-4xl md:text-6xl font-bold playfair text-gray-900 mb-6">Welcome to Kolappuram Village</h1>
+<p class="text-xl text-gray-700 mb-8">A hidden paradise where tradition meets natural beauty. Experience the charm of rural life in our picturesque community.</p>
+<div class="flex flex-wrap gap-4">
+<!-- <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors">Explore Village</button> -->
+<!-- <button class="bg-white text-primary border border-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-gray-50 transition-colors">Watch Video</button> -->
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold playfair text-gray-900 mb-4">Our Beautiful Village</h2>
+<p class="text-gray-600 max-w-3xl mx-auto">Nestled in the heart of the countryside, Kolappuram Village is a community with rich heritage and breathtaking landscapes.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="text-2xl font-bold playfair text-gray-900 mb-4">A Place With Rich History</h3>
+<p class="text-gray-600 mb-6"> Kolappuram has preserved its historical charm while embracing modern comforts. Our village is known for its traditional architecture, friendly community, and sustainable living practices.</p>
+<p class="text-gray-600 mb-8">Kolappuram is a place within Abdul Rahiman Nagar Panchayat in Malappuram district, Kerala, India. It's located near National Highway 17. The road leading to Calicut International Airport begins from Kolappuram. Nearby areas include Mampuram and Tirurangaadi. The provided information mainly focuses on its location and proximity to other places, rather than specific historical details. </p>
+<button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors">Learn More About Our History</button>
+</div>
+<div class="gallery-item rounded-lg overflow-hidden shadow-lg">
+<img src="./m.png" alt="Historic Village Center" class="w-full h-full object-cover object-top">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-calendar-line ri-xl text-primary"></i>
+</div>
+<h4 class="text-4xl font-bold text-gray-900 mb-2">1782</h4>
+<p class="text-gray-600">Year Founded</p>
+</div>
+<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-user-line ri-xl text-green-600"></i>
+</div>
+<h4 class="text-4xl font-bold text-gray-900 mb-2">35,534</h4>
+<p class="text-gray-600">Population</p>
+</div>
+<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-home-line ri-xl text-yellow-600"></i>
+</div>
+<h4 class="text-4xl font-bold text-gray-900 mb-2">12</h4>
+<p class="text-gray-600">Historical Sites</p>
+</div>
+<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-map-pin-line ri-xl text-red-600"></i>
+</div>
+<h4 class="text-4xl font-bold text-gray-900 mb-2">676305</h4>
+<p class="text-gray-600">Pin code</p>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- Village Life Gallery -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold playfair text-gray-900 mb-4">Village Life</h2>
+<p class="text-gray-600 max-w-3xl mx-auto">Experience the beauty and authenticity of daily life in Kolappuram through these captivating moments.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="gallery-item row-span-2 col-span-2">
+<img src="./m2.png" alt="Village Panorama" class="w-full h-full object-cover object-top rounded-lg shadow-md">
+</div>
+<div class="gallery-item">
+<img src="./m5.png" alt="Traditional Craftsmanship" class="w-full h-full object-cover object-top rounded-lg shadow-md">
+</div>
+<div class="gallery-item">
+<img src="./m4.png" alt="Village Children" class="w-full h-full object-cover object-top rounded-lg shadow-md">
+</div>
+<div class="gallery-item">
+<img src="https://readdy.ai/api/search-image?query=Cozy%20interior%20of%20a%20traditional%20village%20cottage%20showing%20a%20fireplace%2C%20wooden%20beams%2C%20and%20comfortable%20furnishings.%20The%20room%20has%20a%20lived-in%20quality%20with%20books%2C%20handmade%20textiles%2C%20and%20personal%20touches.%20Natural%20light%20streams%20through%20small%20windows%20illuminating%20the%20warm%20colors%20and%20textures%20of%20the%20space.%20Traditional%20elements%20like%20a%20rocking%20chair%20or%20handmade%20quilt%20add%20to%20the%20authentic%20character.%20The%20scene%20conveys%20the%20comfort%20and%20simplicity%20of%20village%20home%20life.&width=400&height=400&seq=123467&orientation=squarish" alt="Cottage Interior" class="w-full h-full object-cover object-top rounded-lg shadow-md">
+</div>
+<div class="gallery-item">
+<img src="./m6.png" alt="Village Celebration" class="w-full h-full object-cover object-top rounded-lg shadow-md">
+</div>
+</div>
+<div class="text-center mt-12">
+<!-- <button class="bg-white text-primary border border-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-gray-50 transition-colors">View Full Gallery</button> -->
+</div>
+</div>
+</section>
+
+ <!-- Featured Stories Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Featured Stories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Football has always been the greatest passion of Kolappuram. Whenever a ball is taken to the ground, it creates a festival ambience here.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Story Card 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./Screenshot 2025-05-15 055653.png" alt="Match Winning Goal" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Match Winning Goal</h3>
+                        <p class="text-gray-600 mb-4">James Thompson scores the decisive goal in the final minutes against Westfield Village</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-heart-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">128</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-chat-1-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">24</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">May 12, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./Screenshot 2025-05-15 055845.png" alt="Championship Victory" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Championship Victory</h3>
+                        <p class="text-gray-600 mb-4">Our village team celebrates winning the regional championship for the first time in 15 years</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-heart-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">243</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-chat-1-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">56</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">April 30, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-64 overflow-hidden">
+                        <img src="./m7.png" alt="Youth Training" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Youth Training Program</h3>
+                        <p class="text-gray-600 mb-4">Our new youth development program welcomes 24 young talents from the village</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-heart-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">156</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-chat-1-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">32</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">May 8, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=A%20dramatic%20save%20by%20village%20football%20goalkeeper%20diving%20to%20catch%20ball%2C%20intense%20action%20moment%2C%20green%20field%2C%20spectators%20watching%20from%20sidelines%2C%20rural%20setting%20with%20trees%2C%20cloudy%20dramatic%20sky%2C%20high%20quality%20sports%20photography%20with%20motion%20blur&width=600&height=400&seq=5&orientation=landscape" alt="Goalkeeper Save" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Miraculous Save</h3>
+                        <p class="text-gray-600 mb-4">Michael Chen's incredible penalty save secures our place in the semi-finals</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-heart-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">192</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-chat-1-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">41</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">May 3, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=New%20football%20field%20inauguration%20in%20village%2C%20ribbon%20cutting%20ceremony%2C%20local%20officials%20and%20team%20members%2C%20freshly%20marked%20green%20grass%2C%20new%20goalposts%2C%20rural%20setting%20with%20community%20buildings%2C%20sunny%20day%2C%20celebration%20atmosphere%2C%20high%20quality%20photography&width=600&height=400&seq=6&orientation=landscape" alt="New Field Opening" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">New Field Opening</h3>
+                        <p class="text-gray-600 mb-4">The village celebrates the grand opening of our renovated football field</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-heart-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">215</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-chat-1-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">48</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">April 25, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Card 6 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Village%20football%20charity%20match%2C%20players%20from%20different%20teams%20playing%20together%2C%20spectators%20donating%2C%20fundraising%20banners%20visible%2C%20green%20field%2C%20rural%20setting%2C%20community%20atmosphere%2C%20diverse%20players%2C%20afternoon%20lighting%2C%20high%20quality%20sports%20photography&width=600&height=400&seq=7&orientation=landscape" alt="Charity Match" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Charity Fundraiser</h3>
+                        <p class="text-gray-600 mb-4">Our annual charity match raises over $5,000 for the local children's hospital</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-heart-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">178</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                                        <i class="ri-chat-1-line text-gray-500"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-500">37</span>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">May 10, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+   
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+navbar.classList.add('bg-white', 'shadow-md');
+navbar.classList.remove('bg-transparent');
+} else {
+navbar.classList.remove('bg-white', 'shadow-md');
+navbar.classList.add('bg-transparent');
+}
+});
+// Initial check for navbar
+if (window.scrollY > 50) {
+navbar.classList.add('bg-white', 'shadow-md');
+navbar.classList.remove('bg-transparent');
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
