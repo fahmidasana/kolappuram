@@ -1,526 +1,1081 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Willowbrook Village - A Hidden Paradise</title>
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#3b82f6',secondary:'#10b981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Poppins', sans-serif;
-scroll-behavior: smooth;
-}
-.hero-section {
-background-image: url('https://static.readdy.ai/image/6601009ef1df826df4db9b4b85227d01/a2a030f4e4f4efaf80a6d5180647e41a.png');
-background-size: cover;
-background-position: center;
-position: relative;
-}
-.hero-overlay {
-background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 40%, rgba(255,255,255,0.1) 100%);
-}
-.playfair {
-font-family: 'Playfair Display', serif;
-}
-.stats-item {
-transition: all 0.3s ease;
-}
-.stats-item:hover {
-transform: translateY(-5px);
-}
-.gallery-item {
-overflow: hidden;
-}
-.gallery-item img {
-transition: transform 0.5s ease;
-}
-.gallery-item:hover img {
-transform: scale(1.05);
-}
-.event-card {
-transition: all 0.3s ease;
-}
-.event-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-}
-.attraction-card {
-transition: all 0.3s ease;
-overflow: hidden;
-}
-.attraction-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-}
-.attraction-card img {
-transition: transform 0.5s ease;
-}
-.attraction-card:hover img {
-transform: scale(1.05);
-}
-input[type="range"]::-webkit-slider-thumb {
--webkit-appearance: none;
-appearance: none;
-width: 18px;
-height: 18px;
-background: #3b82f6;
-border-radius: 50%;
-cursor: pointer;
-}
-.custom-checkbox {
-position: relative;
-padding-left: 30px;
-cursor: pointer;
-}
-.custom-checkbox input {
-position: absolute;
-opacity: 0;
-cursor: pointer;
-}
-.checkmark {
-position: absolute;
-top: 0;
-left: 0;
-height: 20px;
-width: 20px;
-background-color: #fff;
-border: 2px solid #e5e7eb;
-border-radius: 4px;
-}
-.custom-checkbox:hover input ~ .checkmark {
-border-color: #3b82f6;
-}
-.custom-checkbox input:checked ~ .checkmark {
-background-color: #3b82f6;
-border-color: #3b82f6;
-}
-.checkmark:after {
-content: "";
-position: absolute;
-display: none;
-}
-.custom-checkbox input:checked ~ .checkmark:after {
-display: block;
-}
-.custom-checkbox .checkmark:after {
-left: 6px;
-top: 2px;
-width: 5px;
-height: 10px;
-border: solid white;
-border-width: 0 2px 2px 0;
-transform: rotate(45deg);
-}
-.switch {
-position: relative;
-display: inline-block;
-width: 48px;
-height: 24px;
-}
-.switch input {
-opacity: 0;
-width: 0;
-height: 0;
-}
-.slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #e5e7eb;
-transition: .4s;
-border-radius: 24px;
-}
-.slider:before {
-position: absolute;
-content: "";
-height: 18px;
-width: 18px;
-left: 3px;
-bottom: 3px;
-background-color: white;
-transition: .4s;
-border-radius: 50%;
-}
-input:checked + .slider {
-background-color: #3b82f6;
-}
-input:checked + .slider:before {
-transform: translateX(24px);
-}
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(20px); }
-to { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeIn {
-animation: fadeIn 1s ease forwards;
-}
-.timeline-item {
-position: relative;
-}
-.timeline-item::before {
-content: '';
-position: absolute;
-width: 2px;
-background-color: #e5e7eb;
-top: 0;
-bottom: 0;
-left: 18px;
-}
-.timeline-dot {
-position: absolute;
-width: 14px;
-height: 14px;
-background-color: #3b82f6;
-border-radius: 50%;
-left: 12px;
-top: 24px;
-z-index: 1;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Resort & Spa</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#6D28D9',secondary:'#4C1D95'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0F172A;
+            color: #E2E8F0;
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0));
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+        }
+        .amenity-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(109, 40, 217, 0.2);
+        }
+        .amenity-card:hover {
+            border-color: rgba(109, 40, 217, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.3);
+        }
+        .room-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(30, 41, 59, 0.8);
+        }
+        .room-card:hover {
+            border-color: rgba(109, 40, 217, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.3);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(30, 41, 59, 0.8);
+        }
+        .testimonial-card:hover {
+            border-color: rgba(109, 40, 217, 0.8);
+            box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.3);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #6D28D9;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .booking-form input, .booking-form select {
+            background-color: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(109, 40, 217, 0.3);
+            color: #E2E8F0;
+        }
+        .booking-form input:focus, .booking-form select:focus {
+            border-color: rgba(109, 40, 217, 0.8);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.2);
+        }
+        .booking-form input::placeholder {
+            color: #94A3B8;
+        }
+        .booking-form select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236D28D9' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .modal {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        .hidden-modal {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .hidden-modal .modal-content {
+            transform: translateY(-50px);
+        }
+        .show-modal {
+            opacity: 1;
+            visibility: visible;
+        }
+        .show-modal .modal-content {
+            transform: translateY(0);
+        }
+    </style>
 </head>
-<body class="bg-white">
-<!-- Header/Navigation -->
-<header class="fixed w-full z-50 transition-all duration-300" id="navbar">
-<div class="container mx-auto px-4 py-3 flex justify-between items-center">
-<div class="flex items-center">
-<h1 class="text-2xl font-['Pacifico'] text-primary">Kolappuram</h1>
-</div>
-<nav class="hidden md:flex space-x-8">
-<a href="#home" class="text-gray-800 hover:text-primary font-medium transition-colors">Home</a>
-<a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors">About</a>
-<a href="#attractions" class="text-gray-800 hover:text-primary font-medium transition-colors">Attractions</a>
-<!-- <a href="#culture" class="text-gray-800 hover:text-primary font-medium transition-colors">Culture</a>
-<a href="#events" class="text-gray-800 hover:text-primary font-medium transition-colors">Events</a> -->
-<a href="#contact" class="text-gray-800 hover:text-primary font-medium transition-colors">Contact</a>
-</nav>
-<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-800">
-<i class="ri-menu-line ri-lg"></i>
-</button>
-</div>
-</header>
-<!-- Hero Section -->
-<section id="home" class="hero-section min-h-screen flex items-center">
-<div class="hero-overlay w-full h-full absolute inset-0"></div>
-<div class="container mx-auto px-4 py-20 relative z-10">
-<div class="w-full md:w-1/2 animate-fadeIn" style="animation-delay: 0.3s;">
-<h1 class="text-4xl md:text-6xl font-bold playfair text-gray-900 mb-6">Welcome to Kolappuram Village</h1>
-<p class="text-xl text-gray-700 mb-8">A hidden paradise where tradition meets natural beauty. Experience the charm of rural life in our picturesque community.</p>
-<div class="flex flex-wrap gap-4">
-<!-- <button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors">Explore Village</button> -->
-<!-- <button class="bg-white text-primary border border-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-gray-50 transition-colors">Watch Video</button> -->
-</div>
-</div>
-</div>
-</section>
-<!-- About Section -->
-<section id="about" class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold playfair text-gray-900 mb-4">Our Beautiful Village</h2>
-<p class="text-gray-600 max-w-3xl mx-auto">Nestled in the heart of the countryside, Kolappuram Village is a community with rich heritage and breathtaking landscapes.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<div>
-<h3 class="text-2xl font-bold playfair text-gray-900 mb-4">A Place With Rich History</h3>
-<p class="text-gray-600 mb-6"> Kolappuram has preserved its historical charm while embracing modern comforts. Our village is known for its traditional architecture, friendly community, and sustainable living practices.</p>
-<p class="text-gray-600 mb-8">Kolappuram is a place within Abdul Rahiman Nagar Panchayat in Malappuram district, Kerala, India. It's located near National Highway 17. The road leading to Calicut International Airport begins from Kolappuram. Nearby areas include Mampuram and Tirurangaadi. The provided information mainly focuses on its location and proximity to other places, rather than specific historical details. </p>
-<button class="bg-primary text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-blue-600 transition-colors">Learn More About Our History</button>
-</div>
-<div class="gallery-item rounded-lg overflow-hidden shadow-lg">
-<img src="./m.png" alt="Historic Village Center" class="w-full h-full object-cover object-top">
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
-<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
-<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-calendar-line ri-xl text-primary"></i>
-</div>
-<h4 class="text-4xl font-bold text-gray-900 mb-2">1782</h4>
-<p class="text-gray-600">Year Founded</p>
-</div>
-<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
-<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-user-line ri-xl text-green-600"></i>
-</div>
-<h4 class="text-4xl font-bold text-gray-900 mb-2">35,534</h4>
-<p class="text-gray-600">Population</p>
-</div>
-<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
-<div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-home-line ri-xl text-yellow-600"></i>
-</div>
-<h4 class="text-4xl font-bold text-gray-900 mb-2">12</h4>
-<p class="text-gray-600">Historical Sites</p>
-</div>
-<div class="stats-item bg-white p-8 rounded-lg shadow-md text-center">
-<div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-<i class="ri-map-pin-line ri-xl text-red-600"></i>
-</div>
-<h4 class="text-4xl font-bold text-gray-900 mb-2">676305</h4>
-<p class="text-gray-600">Pin code</p>
-</div>
-</div>
-</div>
-</section>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0F172A]/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white">Kolappuram</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="#rooms" class="nav-link text-gray-300 hover:text-white transition-colors">Restaurants </a>
+                    <a href="#amenities" class="nav-link text-gray-300 hover:text-white transition-colors">Amenities</a>
+                    <a href="#gallery" class="nav-link text-gray-300 hover:text-white transition-colors">Gallery</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white transition-colors">Contact</a>
+                    <!-- <button id="bookNowBtn" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button> -->
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-gray-300 hover:text-white w-10 h-10 flex items-center justify-center cursor-pointer">
+                        <i class="ri-menu-line ri-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#0F172A] border-b border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">About</a>
+                <a href="#rooms" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Rooms</a>
+                <a href="#amenities" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Amenities</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Contact</a>
+                <button id="mobileBookNowBtn" class="w-full mt-3 bg-primary hover:bg-primary/90 text-white px-3 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="./m5.png" alt="Serenity Resort" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0F172A]/70 via-[#0F172A]/50 to-[#0F172A]"></div>
+        </div>
+        <div class="relative z-10 h-full flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Welcome to  <span class="text-primary">Kolappuram Village</span></h1>
+                        <p class="text-xl text-gray-300 mb-8 max-w-xl">A hidden paradise where tradition meets natural beauty. Experience the charm of rural life in our picturesque community.</p>
+                        <!-- <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                            <button id="heroBookNowBtn" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button text-lg font-medium whitespace-nowrap cursor-pointer">Book Your Stay</button>
+                            <button class="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 !rounded-button text-lg font-medium whitespace-nowrap cursor-pointer">Explore Resort</button>
+                        </div> -->
+                    </div>
+                    <!-- <div class="w-full md:w-1/2 mt-12 md:mt-0">
+                        <div class="bg-[#1E293B]/80 backdrop-blur-md p-6 rounded-lg border border-gray-700 shadow-xl max-w-md mx-auto">
+                            <h3 class="text-xl font-semibold text-white mb-4">Quick Reservation</h3>
+                            <form class="booking-form space-y-4">
+                                <div>
+                                    <label for="check-in" class="block text-sm font-medium text-gray-300 mb-1">Check-in Date</label>
+                                    <input type="date" id="check-in" class="w-full px-4 py-2 !rounded-button" min="2025-05-15">
+                                </div>
+                                <div>
+                                    <label for="check-out" class="block text-sm font-medium text-gray-300 mb-1">Check-out Date</label>
+                                    <input type="date" id="check-out" class="w-full px-4 py-2 !rounded-button" min="2025-05-16">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="adults" class="block text-sm font-medium text-gray-300 mb-1">Adults</label>
+                                        <select id="adults" class="w-full px-4 py-2 !rounded-button pr-8">
+                                            <option value="1">1</option>
+                                            <option value="2" selected>2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="children" class="block text-sm font-medium text-gray-300 mb-1">Children</label>
+                                        <select id="children" class="w-full px-4 py-2 !rounded-button pr-8">
+                                            <option value="0" selected>0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="button" id="checkAvailabilityBtn" class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Check Availability</button>
+                            </form>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 z-10 flex justify-center">
+            <div class="flex space-x-6">
+                <a href="#" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                    <i class="ri-facebook-fill ri-lg"></i>
+                </a>
+                <a href="#" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                    <i class="ri-instagram-fill ri-lg"></i>
+                </a>
+                <a href="#" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                    <i class="ri-twitter-x-fill ri-lg"></i>
+                </a>
+                <a href="#" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                    <i class="ri-youtube-fill ri-lg"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#0F172A]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Our Village</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2">
+                    <div class="relative">
+                        <img src="./m.png" alt="Resort Lobby" class="w-full h-auto rounded-lg shadow-2xl object-cover object-top">
+                        <!-- <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-xl">
+                            <p class="text-2xl font-bold">15+</p>
+                            <p class="text-sm">Years of Excellence</p>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 mt-12 lg:mt-0">    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">A Place With Rich History</a>
+                    <p class="text-gray-300 mb-6">Kolappuram has preserved its historical charm while embracing modern comforts. Our village is known for its traditional architecture, friendly community, and sustainable living practices.</p>
+                    <p class="text-gray-300 mb-8">Kolappuram is a place within Abdul Rahiman Nagar Panchayat in Malappuram district, Kerala, India. It's located near National Highway 17. The road leading to Calicut International Airport begins from Kolappuram. Nearby areas include Mampuram and Tirurangaadi. The provided information mainly focuses on its location and proximity to other places, rather than specific historical details.</p>
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-hotel-line ri-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Luxury Accommodations</h4>
+                                <p class="text-gray-400">50 elegantly appointed rooms and villas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-restaurant-line ri-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Fine Dining</h4>
+                                <p class="text-gray-400">3 restaurants offering global cuisine</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-spa-line ri-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Wellness Spa</h4>
+                                <p class="text-gray-400">Holistic treatments and therapies</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-footprint-line ri-2x"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Activities</h4>
+                                <p class="text-gray-400">Over 20 curated experiences</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Discover Our Story</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Village Life Gallery -->
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold playfair text-gray-900 mb-4">Village Life</h2>
-<p class="text-gray-600 max-w-3xl mx-auto">Experience the beauty and authenticity of daily life in Kolappuram through these captivating moments.</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="gallery-item row-span-2 col-span-2">
-<img src="./m2.png" alt="Village Panorama" class="w-full h-full object-cover object-top rounded-lg shadow-md">
-</div>
-<div class="gallery-item">
-<img src="./m5.png" alt="Traditional Craftsmanship" class="w-full h-full object-cover object-top rounded-lg shadow-md">
-</div>
-<div class="gallery-item">
-<img src="./m4.png" alt="Village Children" class="w-full h-full object-cover object-top rounded-lg shadow-md">
-</div>
-<div class="gallery-item">
-<img src="https://readdy.ai/api/search-image?query=Cozy%20interior%20of%20a%20traditional%20village%20cottage%20showing%20a%20fireplace%2C%20wooden%20beams%2C%20and%20comfortable%20furnishings.%20The%20room%20has%20a%20lived-in%20quality%20with%20books%2C%20handmade%20textiles%2C%20and%20personal%20touches.%20Natural%20light%20streams%20through%20small%20windows%20illuminating%20the%20warm%20colors%20and%20textures%20of%20the%20space.%20Traditional%20elements%20like%20a%20rocking%20chair%20or%20handmade%20quilt%20add%20to%20the%20authentic%20character.%20The%20scene%20conveys%20the%20comfort%20and%20simplicity%20of%20village%20home%20life.&width=400&height=400&seq=123467&orientation=squarish" alt="Cottage Interior" class="w-full h-full object-cover object-top rounded-lg shadow-md">
-</div>
-<div class="gallery-item">
-<img src="./m6.png" alt="Village Celebration" class="w-full h-full object-cover object-top rounded-lg shadow-md">
-</div>
-</div>
-<div class="text-center mt-12">
-<!-- <button class="bg-white text-primary border border-primary px-6 py-3 font-medium !rounded-button whitespace-nowrap hover:bg-gray-50 transition-colors">View Full Gallery</button> -->
-</div>
-</div>
-</section>
-
- <!-- Featured Stories Grid -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-2">Featured Stories</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Football has always been the greatest passion of Kolappuram. Whenever a ball is taken to the ground, it creates a festival ambience here.</p>
+    <!-- Rooms & Suites Section -->
+    <section id="rooms" class="py-20 bg-[#1E293B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Restaurants</h2>
+                <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Our Village –  Food Lover’s Paradise</a>
+                <p class="text-gray-300 max-w-2xl mx-auto">Our village is known far and wide for its rich food culture and variety of restaurants. From traditional local dishes to modern flavors, our eateries offer something for everyone. Whether it’s a quick snack or a full-course meal, visitors leave with full hearts and fuller plates. Come and taste what makes our village truly special!</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Story Card 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-64 overflow-hidden">
-                        <img src="./Screenshot 2025-05-15 055653.png" alt="Match Winning Goal" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                <!-- Room Card 1 -->
+                <div class="room-card rounded-lg overflow-hidden shadow-lg cursor-pointer">
+                    <div class="relative h-64">
+                        <img src="./m9.png" alt="Deluxe Room" class="w-full h-full object-cover object-top">
+                        <!-- <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">From $299/night</div> -->
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Match Winning Goal</h3>
-                        <p class="text-gray-600 mb-4">James Thompson scores the decisive goal in the final minutes against Westfield Village</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-heart-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">128</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-chat-1-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">24</span>
-                                </div>
-                            </div>
-                            <span class="text-sm text-gray-500">May 12, 2025</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Thandoor Hut</h3>
+                        <p class="text-gray-300 mb-4">Thandoor Hut is one of the most loved and famous restaurants in our village, known for its mouth-watering tandoori dishes and rich flavors.</p>
+                        <!-- <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">King Bed</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Ocean View</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">42 m²</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Free WiFi</span>
+                        </div> -->
+                        <div class="flex justify-between items-center">
+                            <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                                View Details
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </button>
+                            <!-- <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button> -->
                         </div>
                     </div>
                 </div>
-
-                <!-- Story Card 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-64 overflow-hidden">
-                        <img src="./Screenshot 2025-05-15 055845.png" alt="Championship Victory" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                <!-- Room Card 2 -->
+                <div class="room-card rounded-lg overflow-hidden shadow-lg cursor-pointer">
+                    <div class="relative h-64">
+                        <img src="./m10.png" alt="Premium Suite" class="w-full h-full object-cover object-top">
+                        <!-- <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">From $459/night</div> -->
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Championship Victory</h3>
-                        <p class="text-gray-600 mb-4">Our village team celebrates winning the regional championship for the first time in 15 years</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-heart-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">243</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-chat-1-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">56</span>
-                                </div>
-                            </div>
-                            <span class="text-sm text-gray-500">April 30, 2025</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Hilux</h3>
+                        <p class="text-gray-300 mb-4">Nestled in the peaceful surroundings of our village, Hilux is more than just a hotel  it’s a warm and welcoming space where tradition meets comfort.</p>
+                        <!-- <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">King Bed</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Garden View</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">65 m²</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Living Area</span>
+                        </div> -->
+                        <div class="flex justify-between items-center">
+                            <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                                View Details
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </button>
+                            <!-- <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button> -->
                         </div>
                     </div>
                 </div>
-
-                <!-- Story Card 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-64 overflow-hidden">
-                        <img src="./m7.png" alt="Youth Training" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                <!-- Room Card 3 -->
+                <div class="room-card rounded-lg overflow-hidden shadow-lg cursor-pointer">
+                    <div class="relative h-64">
+                        <img src="./m11.png" alt="Beachfront Villa" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">From $899/night</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Youth Training Program</h3>
-                        <p class="text-gray-600 mb-4">Our new youth development program welcomes 24 young talents from the village</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-heart-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">156</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-chat-1-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">32</span>
-                                </div>
-                            </div>
-                            <span class="text-sm text-gray-500">May 8, 2025</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Al Farooj</h3>
+                        <p class="text-gray-300 mb-4"> Al Farooj, where flavorful dishes, cozy ambiance, and heartfelt hospitality come together.  Al Farooj offers a perfect blend of taste and tradition in every experience.</p>
+                        <!-- <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">King Bed</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Beachfront</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">120 m²</span>
+                            <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Private Pool</span>
+                        </div> -->
+                        <div class="flex justify-between items-center">
+                            <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                                View Details
+                                <i class="ri-arrow-right-line ml-1"></i>
+                            </button>
+                            <!-- <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button> -->
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View All Restaurants</button>
+            </div>
+        </div>
+    </section>
 
-                <!-- Story Card 4 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=A%20dramatic%20save%20by%20village%20football%20goalkeeper%20diving%20to%20catch%20ball%2C%20intense%20action%20moment%2C%20green%20field%2C%20spectators%20watching%20from%20sidelines%2C%20rural%20setting%20with%20trees%2C%20cloudy%20dramatic%20sky%2C%20high%20quality%20sports%20photography%20with%20motion%20blur&width=600&height=400&seq=5&orientation=landscape" alt="Goalkeeper Save" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-20 bg-[#0F172A]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Resort Amenities</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Indulge in our world-class facilities designed to enhance your stay and create unforgettable memories.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Amenity Card 1 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <i class="ri-water-flash-line ri-3x"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Miraculous Save</h3>
-                        <p class="text-gray-600 mb-4">Michael Chen's incredible penalty save secures our place in the semi-finals</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-heart-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">192</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-chat-1-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">41</span>
-                                </div>
-                            </div>
-                            <span class="text-sm text-gray-500">May 3, 2025</span>
+                    <h3 class="text-xl font-bold text-white mb-3">Infinity Pools</h3>
+                    <p class="text-gray-300 mb-4">Three stunning infinity pools overlooking the ocean, including an adults-only pool with swim-up bar and a family-friendly pool with water features.</p>
+                    <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </button>
+                </div>
+                <!-- Amenity Card 2 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <i class="ri-spa-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Serenity Spa</h3>
+                    <p class="text-gray-300 mb-4">Award-winning spa offering holistic treatments, massages, and wellness programs in a tranquil setting with private treatment rooms and relaxation areas.</p>
+                    <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </button>
+                </div>
+                <!-- Amenity Card 3 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <i class="ri-restaurant-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Gourmet Dining</h3>
+                    <p class="text-gray-300 mb-4">Three distinctive restaurants offering international cuisine, seafood specialties, and authentic local dishes prepared by award-winning chefs using fresh ingredients.</p>
+                    <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </button>
+                </div>
+                <!-- Amenity Card 4 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <i class="ri-fitness-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Fitness Center</h3>
+                    <p class="text-gray-300 mb-4">State-of-the-art fitness facility with cardio equipment, free weights, and dedicated spaces for yoga and meditation classes led by professional instructors.</p>
+                    <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </button>
+                </div>
+                <!-- Amenity Card 5 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <i class="ri-sailboat-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Water Activities</h3>
+                    <p class="text-gray-300 mb-4">Comprehensive water sports center offering snorkeling, diving, kayaking, paddleboarding, and guided boat excursions to nearby islands and coral reefs.</p>
+                    <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </button>
+                </div>
+                <!-- Amenity Card 6 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <i class="ri-gamepad-line ri-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Kids Club</h3>
+                    <p class="text-gray-300 mb-4">Supervised children's program featuring age-appropriate activities, games, arts and crafts, and educational experiences in a safe and engaging environment.</p>
+                    <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                        Learn More
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-[#1E293B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Gallery</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Discover the beauty, culture, and soul of our village — captured in every smile, sunset, and street.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./m.png" alt="Resort Pool" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Infinity Pool</h3>
+                            <p class="text-sm">Our signature infinity pool overlooking the ocean</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Story Card 5 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=New%20football%20field%20inauguration%20in%20village%2C%20ribbon%20cutting%20ceremony%2C%20local%20officials%20and%20team%20members%2C%20freshly%20marked%20green%20grass%2C%20new%20goalposts%2C%20rural%20setting%20with%20community%20buildings%2C%20sunny%20day%2C%20celebration%20atmosphere%2C%20high%20quality%20photography&width=600&height=400&seq=6&orientation=landscape" alt="New Field Opening" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">New Field Opening</h3>
-                        <p class="text-gray-600 mb-4">The village celebrates the grand opening of our renovated football field</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-heart-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">215</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-chat-1-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">48</span>
-                                </div>
-                            </div>
-                            <span class="text-sm text-gray-500">April 25, 2025</span>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./m-m-highway-service-malda-petrol-pumps-EgLdYDJvwP.jpg" alt="Resort Restaurant" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Azure Restaurant</h3>
+                            <p class="text-sm">Fine dining with panoramic ocean views</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Story Card 6 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-64 overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=Village%20football%20charity%20match%2C%20players%20from%20different%20teams%20playing%20together%2C%20spectators%20donating%2C%20fundraising%20banners%20visible%2C%20green%20field%2C%20rural%20setting%2C%20community%20atmosphere%2C%20diverse%20players%2C%20afternoon%20lighting%2C%20high%20quality%20sports%20photography&width=600&height=400&seq=7&orientation=landscape" alt="Charity Match" class="w-full h-full object-cover object-top transition duration-500 hover:scale-105">
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./m5.png" alt="Resort Spa" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Serenity Spa</h3>
+                            <p class="text-sm">Rejuvenating treatments in a tranquil setting</p>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Charity Fundraiser</h3>
-                        <p class="text-gray-600 mb-4">Our annual charity match raises over $5,000 for the local children's hospital</p>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-heart-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">178</span>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./Screenshot 2025-05-15 055845.png" alt="Beach Dining" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Private Beach Dining</h3>
+                            <p class="text-sm">Exclusive dining experiences under the stars</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./m6.png" alt="Fitness Center" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Fitness Center</h3>
+                            <p class="text-sm">State-of-the-art equipment with ocean views</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./m7.png" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <h3 class="text-xl font-bold mb-2">Resort Overview</h3>
+                            <p class="text-sm">Aerial view of our tropical paradise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View Full Gallery</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section class="py-20 bg-[#0F172A]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Guest Experiences</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Hear what our guests have to say about their unforgettable stays at Serenity Resort & Spa.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> -->
+                <!-- Testimonial 1 -->
+                <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary w-8 h-8 flex items-center justify-center">
+                            <i class="ri-double-quotes-l ri-2x"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"Our stay at Serenity Resort exceeded all expectations. The beachfront villa was absolutely stunning, and the staff went above and beyond to make our anniversary special. The private dinner on the beach was magical!"</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-600 mr-4"></div>
+                            <div>
+                                <h4 class="text-white font-medium">Alexandra Johnson</h4>
+                                <p class="text-gray-400 text-sm">New York, USA</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Testimonial 2 -->
+                <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary w-8 h-8 flex items-center justify-center">
+                            <i class="ri-double-quotes-l ri-2x"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"The perfect family getaway! Our children loved the kids club activities while we enjoyed the spa. The infinity pool was breathtaking, and the restaurants offered excellent options for even our pickiest eaters. We're already planning our return."</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-600 mr-4"></div>
+                            <div>
+                                <h4 class="text-white font-medium">Michael Rodriguez</h4>
+                                <p class="text-gray-400 text-sm">Toronto, Canada</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Testimonial 3 -->
+                <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-primary w-8 h-8 flex items-center justify-center">
+                            <i class="ri-double-quotes-l ri-2x"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">"As frequent travelers, we've stayed at many luxury resorts, but Serenity stands out for its attention to detail and personalized service. The spa treatments were exceptional, and the culinary experiences were world-class. Truly a five-star experience."</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-600 mr-4"></div>
+                            <div>
+                                <h4 class="text-white font-medium">Sophia Chen</h4>
+                                <p class="text-gray-400 text-sm">Singapore</p>
+                            </div>
+                        </div>
+                        <div class="flex text-yellow-400">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Read More Reviews</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Special Offers Section -->
+    <!-- <section class="py-20 bg-[#1E293B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Special Offers</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Take advantage of our exclusive packages and promotions designed to enhance your stay.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> -->
+                <!-- Offer 1 -->
+                <!-- <div class="bg-[#0F172A] rounded-lg overflow-hidden shadow-xl border border-gray-800">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-2/5">
+                            <img src="https://readdy.ai/api/search-image?query=Romantic%20resort%20setup%20with%20rose%20petals%2C%20champagne%2C%20and%20chocolate-covered%20strawberries.%20A%20king%20bed%20with%20luxury%20linens%20has%20rose%20petals%20arranged%20in%20a%20heart%20shape.%20A%20bottle%20of%20champagne%20chills%20in%20an%20ice%20bucket%20next%20to%20two%20glasses.%20Soft%20lighting%20from%20candles%20creates%20a%20romantic%20atmosphere.%20The%20scene%20conveys%20luxury%2C%20romance%2C%20and%20special%20occasion%20celebration.&width=400&height=300&seq=12&orientation=landscape" alt="Romantic Getaway" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="w-full md:w-3/5 p-6">
+                            <div class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full inline-block mb-3">Limited Time Offer</div>
+                            <h3 class="text-xl font-bold text-white mb-2">Romantic Escape Package</h3>
+                            <p class="text-gray-300 mb-4">Celebrate your love with our specially curated romantic package including luxury accommodations, champagne upon arrival, couples spa treatment, and private beach dinner.</p>
+                            <div class="flex items-center text-gray-300 mb-4">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-calendar-line"></i>
                                 </div>
-                                <div class="flex items-center">
-                                    <div class="w-5 h-5 flex items-center justify-center mr-1">
-                                        <i class="ri-chat-1-line text-gray-500"></i>
-                                    </div>
-                                    <span class="text-sm text-gray-500">37</span>
+                                <span>Valid until December 15, 2025</span>
+                            </div>
+                            <div class="flex items-center text-gray-300 mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-price-tag-3-line"></i>
+                                </div>
+                                <span>20% off regular rates</span>
+                            </div>
+                            <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">View Details</button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Offer 2 -->
+                <!-- <div class="bg-[#0F172A] rounded-lg overflow-hidden shadow-xl border border-gray-800">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-2/5">
+                            <img src="https://readdy.ai/api/search-image?query=Family%20resort%20activities%20with%20parents%20and%20children%20enjoying%20pool%20games.%20The%20scene%20shows%20a%20family-friendly%20pool%20area%20with%20water%20features%20like%20small%20slides%20and%20fountains.%20Children%20play%20with%20pool%20toys%20while%20parents%20supervise.%20Resort%20staff%20lead%20organized%20activities.%20The%20atmosphere%20is%20fun%20and%20energetic%20with%20bright%20lighting.%20The%20scene%20conveys%20family%20vacation%20enjoyment%20and%20supervised%20recreation.&width=400&height=300&seq=13&orientation=landscape" alt="Family Vacation" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="w-full md:w-3/5 p-6">
+                            <div class="bg-primary/20 text-primary text-sm font-medium px-3 py-1 rounded-full inline-block mb-3">Family Special</div>
+                            <h3 class="text-xl font-bold text-white mb-2">Family Adventure Package</h3>
+                            <p class="text-gray-300 mb-4">Create unforgettable memories with our family package including spacious accommodations, daily breakfast, kids club access, one family excursion, and complimentary water activities.</p>
+                            <div class="flex items-center text-gray-300 mb-4">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-calendar-line"></i>
+                                </div>
+                                <span>Valid for stays of 5+ nights</span>
+                            </div>
+                            <div class="flex items-center text-gray-300 mb-6">
+                                <div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+                                    <i class="ri-price-tag-3-line"></i>
+                                </div>
+                                <span>Kids under 12 stay and eat free</span>
+                            </div>
+                            <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View All Offers</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-[#0F172A]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Have questions or ready to book your stay? Reach out to our dedicated team for personalized assistance.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800 mb-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Get in Touch</h3>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Your name">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Your email">
                                 </div>
                             </div>
-                            <span class="text-sm text-gray-500">May 10, 2025</span>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Subject of your message">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Your message"></textarea>
+                            </div>
+                            <button type="button" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800 mb-8">
+                        <h3 class="text-xl font-bold text-white mb-6">Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-map-pin-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-1">Location</h4>
+                                    <p class="text-gray-300">KOLAPPURAM,<br>AR NAGAR PO<br>676305</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-1">Phone</h4>
+                                    <p class="text-gray-300">Reservations: +1 (555) 123-4567<br>Customer Service: +1 (555) 987-6543</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-white mb-1">Email</h4>
+                                    <p class="text-gray-300">Kolappuram@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <!-- <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-time-line ri-lg"></i>
+                                </div> -->
+                                <!-- <div>
+                                    <h4 class="text-lg font-semibold text-white mb-1">Hours</h4>
+                                    <p class="text-gray-300">Front Desk: 24/7<br>Reservations: 8:00 AM - 8:00 PM Daily</p>
+                                </div> -->
+                            </div>
                         </div>
+                    </div>
+                    <div class="bg-[#1E293B] rounded-lg overflow-hidden shadow-lg border border-gray-800 h-64">
+                        <img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Resort Location Map" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-   
-   
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function() {
-if (window.scrollY > 50) {
-navbar.classList.add('bg-white', 'shadow-md');
-navbar.classList.remove('bg-transparent');
-} else {
-navbar.classList.remove('bg-white', 'shadow-md');
-navbar.classList.add('bg-transparent');
-}
-});
-// Initial check for navbar
-if (window.scrollY > 50) {
-navbar.classList.add('bg-white', 'shadow-md');
-navbar.classList.remove('bg-transparent');
-}
-});
-document.addEventListener('DOMContentLoaded', function() {
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80,
-behavior: 'smooth'
-});
-}
-});
-});
-});
-</script>
+    <!-- Newsletter Section -->
+    <!-- <section class="py-16 bg-primary/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-[#1E293B] rounded-lg p-8 md:p-12 shadow-xl border border-primary/30">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-6 md:mb-0 md:mr-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Subscribe to Our Newsletter</h3>
+                        <p class="text-gray-300">Stay updated with our latest offers, packages, and resort news.</p>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <form class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
+                            <button type="button" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Footer -->
+    <footer class="bg-[#0F172A] pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Kolappuram</a>
+                    <p class="text-gray-400 mb-6">If you're seeking calm, culture, or connection, Kolappuram welcomes you with open arms.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <!-- <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Rooms & Suites</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Dining</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Spa & Wellness</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Activities</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Special Offers</a></li>
+                    </ul> -->
+                </div>
+                <div>
+                    <!-- <h4 class="text-lg font-bold text-white mb-6">Useful Information</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Resort Policies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Cancellation Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Terms & Conditions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors cursor-pointer">Contact Us</a></li>
+                    </ul> -->
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6">Contact Information</h4>
+                    <ul class="space-y-3">
+                        <li class="flex">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mr-3">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">Kolappuram</span>
+                        </li>
+                        <li class="flex">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mr-3">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex">
+                            <div class="w-5 h-5 flex items-center justify-center text-primary mr-3">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@Kolappuram.com</span>
+                        </li>
+                    </ul>
+                        <!-- <div class="mt-6">
+                            <h4 class="text-lg font-bold text-white mb-4">We Accept</h4>
+                            <div class="flex space-x-3">
+                                <div class="w-10 h-10 flex items-center justify-center text-gray-400 cursor-pointer">
+                                    <i class="ri-visa-fill ri-lg"></i>
+                                </div>
+                                <div class="w-10 h-10 flex items-center justify-center text-gray-400 cursor-pointer">
+                                    <i class="ri-mastercard-fill ri-lg"></i>
+                                </div>
+                                <div class="w-10 h-10 flex items-center justify-center text-gray-400 cursor-pointer">
+                                    <i class="ri-paypal-fill ri-lg"></i>
+                                </div>
+                                <div class="w-10 h-10 flex items-center justify-center text-gray-400 cursor-pointer">
+                                    <i class="ri-american-express-fill ri-lg"></i>
+                                </div>
+                            </div>
+                        </div> -->
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Kolappuram. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Terms of Service</a>
+                        <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center hidden-modal">
+        <div class="absolute inset-0 bg-black/70" id="modalOverlay"></div>
+        <div class="modal-content relative bg-[#1E293B] rounded-lg max-w-2xl w-full mx-4 shadow-2xl border border-gray-700">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-white">Book Your Stay</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center cursor-pointer">
+                        <i class="ri-close-line ri-lg"></i>
+                    </button>
+                </div>
+                <form class="booking-form space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="modal-check-in" class="block text-sm font-medium text-gray-300 mb-1">Check-in Date</label>
+                            <input type="date" id="modal-check-in" class="w-full px-4 py-2 !rounded-button" min="2025-05-15">
+                        </div>
+                        <div>
+                            <label for="modal-check-out" class="block text-sm font-medium text-gray-300 mb-1">Check-out Date</label>
+                            <input type="date" id="modal-check-out" class="w-full px-4 py-2 !rounded-button" min="2025-05-16">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="modal-adults" class="block text-sm font-medium text-gray-300 mb-1">Adults</label>
+                            <select id="modal-adults" class="w-full px-4 py-2 !rounded-button pr-8">
+                                <option value="1">1</option>
+                                <option value="2" selected>2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="modal-children" class="block text-sm font-medium text-gray-300 mb-1">Children</label>
+                            <select id="modal-children" class="w-full px-4 py-2 !rounded-button pr-8">
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="modal-room-type" class="block text-sm font-medium text-gray-300 mb-1">Room Type</label>
+                        <select id="modal-room-type" class="w-full px-4 py-2 !rounded-button pr-8">
+                            <option value="">Select Room Type</option>
+                            <option value="deluxe">Deluxe Ocean Room</option>
+                            <option value="premium">Premium Garden Suite</option>
+                            <option value="beachfront">Beachfront Pool Villa</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="modal-name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                            <input type="text" id="modal-name" class="w-full px-4 py-2 !rounded-button" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label for="modal-email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                            <input type="email" id="modal-email" class="w-full px-4 py-2 !rounded-button" placeholder="Your email address">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="modal-special-requests" class="block text-sm font-medium text-gray-300 mb-1">Special Requests</label>
+                        <textarea id="modal-special-requests" rows="3" class="w-full px-4 py-2 !rounded-button" placeholder="Any special requests or requirements"></textarea>
+                    </div>
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" id="cancelBooking" class="bg-transparent border border-gray-600 hover:bg-gray-700 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Cancel</button>
+                        <button type="button" id="submitBooking" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="fixed inset-0 z-50 flex items-center justify-center hidden-modal">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="modal-content relative bg-[#1E293B] rounded-lg max-w-md w-full mx-4 shadow-2xl border border-gray-700">
+            <div class="p-6 text-center">
+                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="ri-check-line ri-2x text-primary"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Booking Confirmed!</h3>
+                <p class="text-gray-300 mb-6">Thank you for choosing Serenity Resort & Spa. Your booking request has been received. We'll send a confirmation email shortly with all the details.</p>
+                <button id="closeConfirmation" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Booking modal functionality
+            const bookingModal = document.getElementById('bookingModal');
+            const confirmationModal = document.getElementById('confirmationModal');
+            const bookNowBtn = document.getElementById('bookNowBtn');
+            const mobileBookNowBtn = document.getElementById('mobileBookNowBtn');
+            const heroBookNowBtn = document.getElementById('heroBookNowBtn');
+            const checkAvailabilityBtn = document.getElementById('checkAvailabilityBtn');
+            const closeModal = document.getElementById('closeModal');
+            const modalOverlay = document.getElementById('modalOverlay');
+            const cancelBooking = document.getElementById('cancelBooking');
+            const submitBooking = document.getElementById('submitBooking');
+            const closeConfirmation = document.getElementById('closeConfirmation');
+            function openBookingModal() {
+                bookingModal.classList.remove('hidden-modal');
+                bookingModal.classList.add('show-modal');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeBookingModal() {
+                bookingModal.classList.remove('show-modal');
+                bookingModal.classList.add('hidden-modal');
+                document.body.style.overflow = '';
+            }
+
+            function openConfirmationModal() {
+                confirmationModal.classList.remove('hidden-modal');
+                confirmationModal.classList.add('show-modal');
+            }
+
+            function closeConfirmationModal() {
+                confirmationModal.classList.remove('show-modal');
+                confirmationModal.classList.add('hidden-modal');
+                document.body.style.overflow = '';
+            }
+            bookNowBtn.addEventListener('click', openBookingModal);
+            mobileBookNowBtn.addEventListener('click', openBookingModal);
+            heroBookNowBtn.addEventListener('click', openBookingModal);
+            checkAvailabilityBtn.addEventListener('click', openBookingModal);
+            closeModal.addEventListener('click', closeBookingModal);
+            modalOverlay.addEventListener('click', closeBookingModal);
+            cancelBooking.addEventListener('click', closeBookingModal);
+            
+            submitBooking.addEventListener('click', function() {
+                closeBookingModal();
+                openConfirmationModal();
+            });
+            
+            closeConfirmation.addEventListener('click', closeConfirmationModal);
+            // Set minimum dates for date inputs
+            const today = new Date().toISOString().split('T')[0];
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowStr = tomorrow.toISOString().split('T')[0];
+            
+            document.getElementById('check-in').min = today;
+            document.getElementById('check-out').min = tomorrowStr;
+            document.getElementById('modal-check-in').min = today;
+            document.getElementById('modal-check-out').min = tomorrowStr;
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
