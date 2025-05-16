@@ -1,63 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kolappuram</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:'#6D28D9',secondary:'#4C1D95'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-    <link rel="shortcut icon" href="https://png.pngtree.com/png-vector/20230413/ourmid/pngtree-3d-location-icon-clipart-in-transparent-background-vector-png-image_6704161.png" type="image/x-icon">
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#6D28D9', secondary: '#4C1D95' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="shortcut icon"
+        href="https://png.pngtree.com/png-vector/20230413/ourmid/pngtree-3d-location-icon-clipart-in-transparent-background-vector-png-image_6704161.png"
+        type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
     <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #0F172A;
             color: #E2E8F0;
         }
+
+        /* From Uiverse.io by codebykay101 */
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .glass {
+            position: relative;
+            width: 200px;
+            height: 280px;
+            background: linear-gradient(#fff2, transparent);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.5s;
+            border-radius: 10px;
+            margin: 0 -45px;
+            backdrop-filter: blur(10px);
+            transform: rotate(calc(var(--r) * 1deg));
+        }
+
+        .container:hover .glass {
+            transform: rotate(0deg);
+            margin: 0 10px;
+        }
+
+        .container .glass::before {
+            content: attr(data-text);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container .glass svg {
+            font-size: 2.5em;
+            fill: #fff;
+        }
+/* From Uiverse.io by joe-watson-sbf */ 
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(13, 13, 13);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, rgb(37, 36, 36) 60%, rgb(16, 15, 14) 88%,
+     rgb(27, 24, 22) 40%, rgba(30, 26, 25, 0.603) 48%);
+  color: rgb(64, 34, 23);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(13, 12, 12) 30%, rgb(105, 75, 68) 88%,
+     bisque 40%, rgb(255, 185, 160) 78%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
         .hero-gradient {
             background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0));
         }
+
         .card-hover {
             transition: all 0.3s ease;
         }
+
         .card-hover:hover {
             transform: translateY(-10px);
         }
+
         .amenity-card {
             transition: all 0.3s ease;
             background: rgba(30, 41, 59, 0.5);
             border: 1px solid rgba(109, 40, 217, 0.2);
         }
+
         .amenity-card:hover {
             border-color: rgba(109, 40, 217, 0.8);
             box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.3);
         }
+
         .room-card {
             transition: all 0.3s ease;
             background: rgba(30, 41, 59, 0.5);
             border: 1px solid rgba(30, 41, 59, 0.8);
         }
+
         .room-card:hover {
             border-color: rgba(109, 40, 217, 0.8);
             box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.3);
         }
+
         .testimonial-card {
             transition: all 0.3s ease;
             background: rgba(30, 41, 59, 0.5);
             border: 1px solid rgba(30, 41, 59, 0.8);
         }
+
         .testimonial-card:hover {
             border-color: rgba(109, 40, 217, 0.8);
             box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.3);
         }
+
         .nav-link {
             position: relative;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -68,22 +189,29 @@
             background-color: #6D28D9;
             transition: width 0.3s ease;
         }
+
         .nav-link:hover::after {
             width: 100%;
         }
-        .booking-form input, .booking-form select {
+
+        .booking-form input,
+        .booking-form select {
             background-color: rgba(30, 41, 59, 0.8);
             border: 1px solid rgba(109, 40, 217, 0.3);
             color: #E2E8F0;
         }
-        .booking-form input:focus, .booking-form select:focus {
+
+        .booking-form input:focus,
+        .booking-form select:focus {
             border-color: rgba(109, 40, 217, 0.8);
             outline: none;
             box-shadow: 0 0 0 2px rgba(109, 40, 217, 0.2);
         }
+
         .booking-form input::placeholder {
             color: #94A3B8;
         }
+
         .booking-form select {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236D28D9' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
             background-position: right 0.5rem center;
@@ -94,28 +222,35 @@
             -moz-appearance: none;
             appearance: none;
         }
+
         .modal {
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
+
         .modal-content {
             transition: transform 0.3s ease;
         }
+
         .hidden-modal {
             opacity: 0;
             visibility: hidden;
         }
+
         .hidden-modal .modal-content {
             transform: translateY(-50px);
         }
+
         .show-modal {
             opacity: 1;
             visibility: visible;
         }
+
         .show-modal .modal-content {
             transform: translateY(0);
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0F172A]/90 backdrop-blur-md border-b border-gray-800">
@@ -134,7 +269,8 @@
                     <!-- <button id="bookNowBtn" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button> -->
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="mobileMenuBtn" class="text-gray-300 hover:text-white w-10 h-10 flex items-center justify-center cursor-pointer">
+                    <button id="mobileMenuBtn"
+                        class="text-gray-300 hover:text-white w-10 h-10 flex items-center justify-center cursor-pointer">
                         <i class="ri-menu-line ri-lg"></i>
                     </button>
                 </div>
@@ -143,13 +279,21 @@
         <!-- Mobile menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-[#0F172A] border-b border-gray-800">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Home</a>
-                <a href="#about" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">About</a>
-                <a href="#rooms" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Rooms</a>
-                <a href="#amenities" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Amenities</a>
-                <a href="#gallery" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Gallery</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Contact</a>
-                <button id="mobileBookNowBtn" class="w-full mt-3 bg-primary hover:bg-primary/90 text-white px-3 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button>
+                <a href="#home"
+                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Home</a>
+                <a href="#about"
+                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">About</a>
+                <a href="#rooms"
+                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Rooms</a>
+                <a href="#amenities"
+                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Amenities</a>
+                <a href="#gallery"
+                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Gallery</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Contact</a>
+                <button id="mobileBookNowBtn"
+                    class="w-full mt-3 bg-primary hover:bg-primary/90 text-white px-3 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book
+                    Now</button>
             </div>
         </div>
     </nav>
@@ -164,8 +308,11 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div class="flex flex-col md:flex-row items-center">
                     <div class="w-full md:w-1/2 text-center md:text-left">
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Welcome to  <span class="text-primary">Kolappuram Village</span></h1>
-                        <p class="text-xl text-gray-300 mb-8 max-w-xl">A hidden paradise where tradition meets natural beauty. Experience the charm of rural life in our picturesque community.</p>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Welcome to
+                            <span class="text-primary">Kolappuram Village</span>
+                        </h1>
+                        <p class="text-xl text-gray-300 mb-8 max-w-xl">A hidden paradise where tradition meets natural
+                            beauty. Experience the charm of rural life in our picturesque community.</p>
                         <!-- <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
                             <button id="heroBookNowBtn" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button text-lg font-medium whitespace-nowrap cursor-pointer">Book Your Stay</button>
                             <button class="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 !rounded-button text-lg font-medium whitespace-nowrap cursor-pointer">Explore Resort</button>
@@ -212,16 +359,20 @@
         </div>
         <div class="absolute bottom-10 left-0 right-0 z-10 flex justify-center">
             <div class="flex space-x-6">
-                <a href="https://www.facebook.com/share/18rnEd5ikY/" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                <a href="https://www.facebook.com/share/18rnEd5ikY/"
+                    class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
                     <i class="ri-facebook-fill ri-lg"></i>
                 </a>
-                <a href="https://www.instagram.com/dosthana_kolappuram/" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                <a href="https://www.instagram.com/dosthana_kolappuram/"
+                    class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
                     <i class="ri-instagram-fill ri-lg"></i>
                 </a>
-                <a href="#" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                <a href="#"
+                    class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
                     <i class="ri-twitter-x-fill ri-lg"></i>
                 </a>
-                <a href="https://www.youtube.com/@dosthana_kolappuram" class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
+                <a href="https://www.youtube.com/@dosthana_kolappuram"
+                    class="text-white hover:text-primary transition-colors w-10 h-10 flex items-center justify-center cursor-pointer">
                     <i class="ri-youtube-fill ri-lg"></i>
                 </a>
             </div>
@@ -238,16 +389,24 @@
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="w-full lg:w-1/2">
                     <div class="relative">
-                        <img src="./m.png" alt="Resort Lobby" class="w-full h-auto rounded-lg shadow-2xl object-cover object-top">
+                        <img src="./m.png" alt="Resort Lobby"
+                            class="w-full h-auto rounded-lg shadow-2xl object-cover object-top">
                         <!-- <div class="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-lg shadow-xl">
                             <p class="text-2xl font-bold">15+</p>
                             <p class="text-sm">Years of Excellence</p>
                         </div> -->
                     </div>
                 </div>
-                <div class="w-full lg:w-1/2 mt-12 lg:mt-0">    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">A Place With Rich History</a>
-                    <p class="text-gray-300 mb-6">Kolappuram has preserved its historical charm while embracing modern comforts. Our village is known for its traditional architecture, friendly community, and sustainable living practices.</p>
-                    <p class="text-gray-300 mb-8">Kolappuram is a place within Abdul Rahiman Nagar Panchayat in Malappuram district, Kerala, India. It's located near National Highway 17. The road leading to Calicut International Airport begins from Kolappuram. Nearby areas include Mampuram and Tirurangaadi. The provided information mainly focuses on its location and proximity to other places, rather than specific historical details.</p>
+                <div class="w-full lg:w-1/2 mt-12 lg:mt-0"> <a href="#"
+                        class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">A Place With Rich History</a>
+                    <p class="text-gray-300 mb-6">Kolappuram has preserved its historical charm while embracing modern
+                        comforts. Our village is known for its traditional architecture, friendly community, and
+                        sustainable living practices.</p>
+                    <p class="text-gray-300 mb-8">Kolappuram is a place within Abdul Rahiman Nagar Panchayat in
+                        Malappuram district, Kerala, India. It's located near National Highway 17. The road leading to
+                        Calicut International Airport begins from Kolappuram. Nearby areas include Mampuram and
+                        Tirurangaadi. The provided information mainly focuses on its location and proximity to other
+                        places, rather than specific historical details.</p>
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div class="flex items-start">
                             <!-- <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
@@ -255,7 +414,7 @@
                             </div>  -->
                             <div>
                                 <h4 class="text-lg font-semibold text-white mb-2">Population</h4>
-                                <p class="text-gray-400">	30,078 (2001) </p>
+                                <p class="text-gray-400"> 30,078 (2001) </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -286,7 +445,9 @@
                             </div>
                         </div>
                     </div>
-                    <button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Discover Our Story</button>
+                    <button
+                        class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Discover
+                        Our Story</button>
                 </div>
             </div>
         </div>
@@ -297,8 +458,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Restaurants</h2>
-                <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Our Village –  Food Lover’s Paradise</a>
-                <p class="text-gray-300 max-w-2xl mx-auto">Our village is known far and wide for its rich food culture and variety of restaurants. From traditional local dishes to modern flavors, our eateries offer something for everyone. Whether it’s a quick snack or a full-course meal, visitors leave with full hearts and fuller plates. Come and taste what makes our village truly special!</p>
+                <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Our Village – Food Lover’s
+                    Paradise</a>
+                <p class="text-gray-300 max-w-2xl mx-auto">Our village is known far and wide for its rich food culture
+                    and variety of restaurants. From traditional local dishes to modern flavors, our eateries offer
+                    something for everyone. Whether it’s a quick snack or a full-course meal, visitors leave with full
+                    hearts and fuller plates. Come and taste what makes our village truly special!</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -310,7 +475,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Thandoor Hut</h3>
-                        <p class="text-gray-300 mb-4">Thandoor Hut is one of the most loved and famous restaurants in our village, known for its mouth-watering tandoori dishes and rich flavors.</p>
+                        <p class="text-gray-300 mb-4">Thandoor Hut is one of the most loved and famous restaurants in
+                            our village, known for its mouth-watering tandoori dishes and rich flavors.</p>
                         <!-- <div class="flex flex-wrap gap-2 mb-6">
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">King Bed</span>
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Ocean View</span>
@@ -318,7 +484,8 @@
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Free WiFi</span>
                         </div> -->
                         <div class="flex justify-between items-center">
-                            <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                            <button
+                                class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                                 View Details
                                 <i class="ri-arrow-right-line ml-1"></i>
                             </button>
@@ -334,7 +501,8 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Hilux</h3>
-                        <p class="text-gray-300 mb-4">Nestled in the peaceful surroundings of our village, Hilux is more than just a hotel  it’s a warm and welcoming space where tradition meets comfort.</p>
+                        <p class="text-gray-300 mb-4">Nestled in the peaceful surroundings of our village, Hilux is more
+                            than just a hotel it’s a warm and welcoming space where tradition meets comfort.</p>
                         <!-- <div class="flex flex-wrap gap-2 mb-6">
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">King Bed</span>
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Garden View</span>
@@ -342,7 +510,8 @@
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Living Area</span>
                         </div> -->
                         <div class="flex justify-between items-center">
-                            <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                            <button
+                                class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                                 View Details
                                 <i class="ri-arrow-right-line ml-1"></i>
                             </button>
@@ -354,11 +523,15 @@
                 <div class="room-card rounded-lg overflow-hidden shadow-lg cursor-pointer">
                     <div class="relative h-64">
                         <img src="./m11.png" alt="Beachfront Villa" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">From $899/night</div>
+                        <div
+                            class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                            From $899/night</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Al Farooj</h3>
-                        <p class="text-gray-300 mb-4"> Al Farooj, where flavorful dishes, cozy ambiance, and heartfelt hospitality come together.  Al Farooj offers a perfect blend of taste and tradition in every experience.</p>
+                        <p class="text-gray-300 mb-4"> Al Farooj, where flavorful dishes, cozy ambiance, and heartfelt
+                            hospitality come together. Al Farooj offers a perfect blend of taste and tradition in every
+                            experience.</p>
                         <!-- <div class="flex flex-wrap gap-2 mb-6">
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">King Bed</span>
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Beachfront</span>
@@ -366,7 +539,8 @@
                             <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-xs">Private Pool</span>
                         </div> -->
                         <div class="flex justify-between items-center">
-                            <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
+                            <button
+                                class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                                 View Details
                                 <i class="ri-arrow-right-line ml-1"></i>
                             </button>
@@ -376,7 +550,9 @@
                 </div>
             </div>
             <div class="text-center mt-12">
-                <button class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View All Restaurants</button>
+                <button
+                    class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View
+                    All Restaurants</button>
             </div>
         </div>
     </section>
@@ -386,7 +562,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Amenities</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">The amenities in our village provide essential comfort and convenience, supporting the daily lives and well-being of every resident.</p>
+                <p class="text-gray-300 max-w-2xl mx-auto">The amenities in our village provide essential comfort and
+                    convenience, supporting the daily lives and well-being of every resident.</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -397,8 +574,8 @@
                     </div> -->
                     <h3 class="text-xl font-bold text-white mb-3">AIRPORTS NEARBY</h3>
                     <p class="text-gray-300 mb-4">Calicut International Airport <br>
-India (9km) <br> <br>Cochin International Airport <br>
-India (113km) <br> <br>Coimbatore International Airport (CJB) <br>India (121km)</p>
+                        India (9km) <br> <br>Cochin International Airport <br>
+                        India (113km) <br> <br>Coimbatore International Airport (CJB) <br>India (121km)</p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -410,14 +587,15 @@ India (113km) <br> <br>Coimbatore International Airport (CJB) <br>India (121km)<
                         <i class="ri-spa-line ri-3x"></i>
                     </div> -->
                     <h3 class="text-xl font-bold text-white mb-3">AKSHAYA CENTRE KOLAPPURAM</h3>
-                  <h1>Center Address</h1>   <p class="text-gray-300 mb-4">  <br>
-AkshayaCentre, Kolappuram, <br> ARNagarPO, 676305 <br>
+                    <h1>Center Address</h1>
+                    <p class="text-gray-300 mb-4"> <br>
+                        AkshayaCentre, Kolappuram, <br> ARNagarPO, 676305 <br>
 
-Kolappuram <br>
-Malappuram <br>
-Kerala, India - <br>
-9388403220,
-</p>
+                        Kolappuram <br>
+                        Malappuram <br>
+                        Kerala, India - <br> <a href="tel:+[91][9388403220]"> 9388403220 </a>
+
+                    </p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -429,7 +607,10 @@ Kerala, India - <br>
                         <i class="ri-restaurant-line ri-3x"></i>
                     </div> -->
                     <h3 class="text-xl font-bold text-white mb-3">GHS KOLAPPURAM </h3>
-                    <p class="text-gray-300 mb-4">UDISE Code: 32051300706 <br>Year Of Establishment: 1924 <br> Phone: 0494 246 8271<br> AR Nagar Po ,Malappuram <br>Kolappuram <br>pin 676305</p>
+                    <p class="text-gray-300 mb-4">UDISE Code: 32051300706 <br>Year Of Establishment: 1924 <br> <a
+                            href="tel:+[91][ 0494 246 8271]"> 0494 246 8271 </a><br> AR Nagar Po ,Malappuram
+                        <br>Kolappuram <br>pin 676305
+                    </p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -442,10 +623,11 @@ Kerala, India - <br>
                     </div> -->
                     <h3 class="text-xl font-bold text-white mb-3">INDIAN OIL FUEL STATION</h3>
                     <p class="text-gray-300 mb-4">
-SH 65, Kolappuram <br>
-Malappuram - 676305 <br>
-+919446157773 <br>
-Open 24 Hours</p>
+                        SH 65, Kolappuram <br>
+                        Malappuram - 676305 <br> <a href="tel:+[91][9446157773 ]">+919446157773 </a>
+                        <br>
+                        Open 24 Hours
+                    </p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -457,7 +639,8 @@ Open 24 Hours</p>
                         <i class="ri-sailboat-line ri-3x"></i>
                     </div> -->
                     <h3 class="text-xl font-bold text-white mb-3">STATE BANK OF INDIA</h3>
-                    <p class="text-gray-300 mb-4">Kolappuram,Kerala <br>676305 <br> +9664942468180</p>
+                    <p class="text-gray-300 mb-4">Kolappuram,Kerala <br>676305 <br> <a
+                            href="tel:+[91][07947416463 ]">07947416463 </a></p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -469,8 +652,9 @@ Open 24 Hours</p>
                         <i class="ri-gamepad-line ri-3x"></i>
                     </div> -->
                     <h3 class="text-xl font-bold text-white mb-3">KOLAPPURAM MEDICALS</h3>
-                    <p class="text-gray-300 mb-4">N H Kolappuram, Malappuram, <br> Abdurahiman Nagar-676305 <br> 07947416463 <br>
-Open until 6:30 pm</p>
+                    <p class="text-gray-300 mb-4">N H Kolappuram, Malappuram, <br> Abdurahiman Nagar-676305 <br> <a
+                            href="tel:+[91][07947416463 ]">07947416463 </a> <br>
+                        Open until 6:30 pm</p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                         Learn More
                         <i class="ri-arrow-right-line ml-1"></i>
@@ -485,67 +669,88 @@ Open until 6:30 pm</p>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Gallery</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Discover the beauty, culture, and soul of our village — captured in every smile, sunset, and street.</p>
+                <p class="text-gray-300 max-w-2xl mx-auto">Discover the beauty, culture, and soul of our village —
+                    captured in every smile, sunset, and street.</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div class="relative group overflow-hidden rounded-lg cursor-pointer">
-                    <img src="./m14.jpg" alt="Resort Pool" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <img src="./m14.jpg" alt="Resort Pool"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
                             <h3 class="text-xl font-bold mb-2">madrasa</h3>
-                            <p class="text-sm">The madrasa in our village is a peaceful center of Islamic learning and moral guidance, nurturing young hearts with the light of faith and knowledge.</p>
+                            <p class="text-sm">The madrasa in our village is a peaceful center of Islamic learning and
+                                moral guidance, nurturing young hearts with the light of faith and knowledge.</p>
                         </div>
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-lg cursor-pointer">
-                    <img src="./m-m-highway-service-malda-petrol-pumps-EgLdYDJvwP.jpg" alt="Resort Restaurant" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <img src="./m-m-highway-service-malda-petrol-pumps-EgLdYDJvwP.jpg" alt="Resort Restaurant"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
                             <h3 class="text-xl font-bold mb-2"> Petrol Pump</h3>
-                            <p class="text-sm">The petrol pump in our village provides essential fuel services to travelers and locals, keeping our roads and daily life moving smoothly.</p>
+                            <p class="text-sm">The petrol pump in our village provides essential fuel services to
+                                travelers and locals, keeping our roads and daily life moving smoothly.</p>
                         </div>
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-lg cursor-pointer">
-                    <img src="./m5.png" alt="Resort Spa" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <img src="./m5.png" alt="Resort Spa"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
                             <h3 class="text-xl font-bold mb-2">Bridge</h3>
-                            <p class="text-sm">The bridge in our village connects distant paths and hearts, serving as a lifeline for people and fields across the river</p>
+                            <p class="text-sm">The bridge in our village connects distant paths and hearts, serving as a
+                                lifeline for people and fields across the river</p>
                         </div>
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-lg cursor-pointer">
-                    <img src="./m15.jpg" alt="Beach Dining" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <img src="./m15.jpg" alt="Beach Dining"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
                             <h3 class="text-xl font-bold mb-2">Government School</h3>
-                            <p class="text-sm">The government school in our village is a place where young minds grow with knowledge, discipline, and hope for a brighter future.</p>
+                            <p class="text-sm">The government school in our village is a place where young minds grow
+                                with knowledge, discipline, and hope for a brighter future.</p>
                         </div>
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-lg cursor-pointer">
-                    <img src="./m6.png" alt="Fitness Center" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <img src="./m6.png" alt="Fitness Center"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
                             <h3 class="text-xl font-bold mb-2">NH66 Highway</h3>
-                            <p class="text-sm">The NH66 highway passing through our village serves as a vital roadway, connecting our community to cities, towns, and new opportunities</p>
+                            <p class="text-sm">The NH66 highway passing through our village serves as a vital roadway,
+                                connecting our community to cities, towns, and new opportunities</p>
                         </div>
                     </div>
                 </div>
                 <div class="relative group overflow-hidden rounded-lg cursor-pointer">
-                    <img src="./m7.png" class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <img src="./m7.png"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
                             <h3 class="text-xl font-bold mb-2">Passion</h3>
-                            <p class="text-sm">The football lovers in our village bring the ground to life with their passion, teamwork, and endless love for the beautiful game.</p>
+                            <p class="text-sm">The football lovers in our village bring the ground to life with their
+                                passion, teamwork, and endless love for the beautiful game.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-12">
-                <button class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View Full Gallery</button>
+                <button
+                    class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View
+                    Full Gallery</button>
             </div>
         </div>
     </section>
@@ -559,8 +764,8 @@ Open until 6:30 pm</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> -->
-                <!-- Testimonial 1 -->
-                <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
+    <!-- Testimonial 1 -->
+    <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
                     <div class="flex items-center mb-4">
                         <div class="text-primary w-8 h-8 flex items-center justify-center">
                             <i class="ri-double-quotes-l ri-2x"></i>
@@ -584,8 +789,8 @@ Open until 6:30 pm</p>
                         </div>
                     </div>
                 </div> -->
-                <!-- Testimonial 2 -->
-                <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
+    <!-- Testimonial 2 -->
+    <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
                     <div class="flex items-center mb-4">
                         <div class="text-primary w-8 h-8 flex items-center justify-center">
                             <i class="ri-double-quotes-l ri-2x"></i>
@@ -609,8 +814,8 @@ Open until 6:30 pm</p>
                         </div>
                     </div>
                 </div> -->
-                <!-- Testimonial 3 -->
-                <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
+    <!-- Testimonial 3 -->
+    <!-- <div class="testimonial-card rounded-lg p-6 shadow-lg">
                     <div class="flex items-center mb-4">
                         <div class="text-primary w-8 h-8 flex items-center justify-center">
                             <i class="ri-double-quotes-l ri-2x"></i>
@@ -650,8 +855,8 @@ Open until 6:30 pm</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> -->
-                <!-- Offer 1 -->
-                <!-- <div class="bg-[#0F172A] rounded-lg overflow-hidden shadow-xl border border-gray-800">
+    <!-- Offer 1 -->
+    <!-- <div class="bg-[#0F172A] rounded-lg overflow-hidden shadow-xl border border-gray-800">
                     <div class="flex flex-col md:flex-row">
                         <div class="w-full md:w-2/5">
                             <img src="https://readdy.ai/api/search-image?query=Romantic%20resort%20setup%20with%20rose%20petals%2C%20champagne%2C%20and%20chocolate-covered%20strawberries.%20A%20king%20bed%20with%20luxury%20linens%20has%20rose%20petals%20arranged%20in%20a%20heart%20shape.%20A%20bottle%20of%20champagne%20chills%20in%20an%20ice%20bucket%20next%20to%20two%20glasses.%20Soft%20lighting%20from%20candles%20creates%20a%20romantic%20atmosphere.%20The%20scene%20conveys%20luxury%2C%20romance%2C%20and%20special%20occasion%20celebration.&width=400&height=300&seq=12&orientation=landscape" alt="Romantic Getaway" class="w-full h-full object-cover object-top">
@@ -676,8 +881,8 @@ Open until 6:30 pm</p>
                         </div>
                     </div>
                 </div> -->
-                <!-- Offer 2 -->
-                <!-- <div class="bg-[#0F172A] rounded-lg overflow-hidden shadow-xl border border-gray-800">
+    <!-- Offer 2 -->
+    <!-- <div class="bg-[#0F172A] rounded-lg overflow-hidden shadow-xl border border-gray-800">
                     <div class="flex flex-col md:flex-row">
                         <div class="w-full md:w-2/5">
                             <img src="https://readdy.ai/api/search-image?query=Family%20resort%20activities%20with%20parents%20and%20children%20enjoying%20pool%20games.%20The%20scene%20shows%20a%20family-friendly%20pool%20area%20with%20water%20features%20like%20small%20slides%20and%20fountains.%20Children%20play%20with%20pool%20toys%20while%20parents%20supervise.%20Resort%20staff%20lead%20organized%20activities.%20The%20atmosphere%20is%20fun%20and%20energetic%20with%20bright%20lighting.%20The%20scene%20conveys%20family%20vacation%20enjoyment%20and%20supervised%20recreation.&width=400&height=300&seq=13&orientation=landscape" alt="Family Vacation" class="w-full h-full object-cover object-top">
@@ -710,60 +915,65 @@ Open until 6:30 pm</p>
     </section> -->
 
     <!-- Contact Section -->
+
+
     <section id="contact" class="py-20 bg-[#0F172A]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Get in touch with us to share your thoughts, ask questions, or connect with our village community.</p>
+                <p class="text-gray-300 max-w-2xl mx-auto">Get in touch with us to share your thoughts, ask questions,
+                    or connect with our village community.</p>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div>
-                    <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800 mb-8">
-                        <h3 class="text-xl font-bold text-white mb-6">Get in Touch</h3>
-                        <form class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
-                                    <input type="text" id="name" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Your name">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                                    <input type="email" id="email" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Your email">
-                                </div>
-                            </div>
-                            <div>
-                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
-                                <input type="text" id="subject" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Subject of your message">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Your message"></textarea>
-                            </div>
-                            <button type="button" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Send Message</button>
-                        </form>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Box 1: Contact Form -->
+                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+                    <h3 class="text-xl font-bold text-white mb-6 ">Ward 18 - Ward Member</h3>
+                    <!-- From Uiverse.io by codebykay101 -->
+                    <div class="container">
+                        <!-- From Uiverse.io by joe-watson-sbf --> 
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <p class="title"><img src="./2020095701801.jpg" alt="" style="height:260px; width:210px; border-radius: 10px;"></p>
+            <p></p>
+        </div>
+        <div class="flip-card-back">
+            <p class="title">	BABY K M</p>
+            <p>WARD 18 <br>KOLAPPURAM SOUTH, A R NAGAR-676305 <br> <a
+                            href="tel:+[91][9947307618 ]">+919947307618 </a></p>
+        </div>
+    </div>
+</div>
+                        
                     </div>
+
+
                 </div>
-                <div>
-                    <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800 mb-8">
-                        <h3 class="text-xl font-bold text-white mb-6">Information</h3>
-                        <div class="space-y-6">
-                            <div class="flex">
-                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
-                                    <i class="ri-map-pin-line ri-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-semibold text-white mb-1">Location</h4>
-                                    <p class="text-gray-300">KOLAPPURAM,<br>AR NAGAR PO<br>676305</p>
-                                </div>
+
+                <!-- Box 2: Location Information -->
+                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+                    <h3 class="text-xl font-bold text-white mb-6">Our Location</h3>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                <i class="ri-map-pin-line ri-lg"></i>
                             </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-1">Address</h4>
+                                <p class="text-gray-300">KOLAPPURAM,<br>AR NAGAR Po<br>676305</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
                             <div class="flex">
                                 <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
                                     <i class="ri-phone-line ri-lg"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-semibold text-white mb-1">Phone</h4>
-                                    <p class="text-gray-300">9400010539 </p>
+                                    <p class="text-gray-300"><a href="tel:+919400010539"
+                                            class="hover:text-primary transition">9400010539</a></p>
                                 </div>
                             </div>
                             <div class="flex">
@@ -772,22 +982,54 @@ Open until 6:30 pm</p>
                                 </div>
                                 <div>
                                     <h4 class="text-lg font-semibold text-white mb-1">Email</h4>
-                                    <p class="text-gray-300">Kolappuram@gmail.com</p>
+                                    <p class="text-gray-300"><a href="mailto:Kolappuram@gmail.com"
+                                            class="hover:text-primary transition">Kolappuram@gmail.com</a></p>
                                 </div>
-                            </div>
-                            <div class="flex">
-                                <!-- <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
-                                    <i class="ri-time-line ri-lg"></i>
-                                </div> -->
-                                <!-- <div>
-                                    <h4 class="text-lg font-semibold text-white mb-1">Hours</h4>
-                                    <p class="text-gray-300">Front Desk: 24/7<br>Reservations: 8:00 AM - 8:00 PM Daily</p>
-                                </div> -->
                             </div>
                         </div>
                     </div>
-                    <div class="bg-[#1E293B] rounded-lg overflow-hidden shadow-lg border border-gray-800 h-64">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.433578500182!2d75.92990520655003!3d11.059847235865284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64da8a1914111%3A0x227ccf818033f8d5!2sKolappuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1747346926456!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <!-- Box 3: Contact Information -->
+                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <h3 class="text-xl font-bold text-white mb-6">Send Us a Message</h3> <br>
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                    placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email
+                                    Address</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                    placeholder="Your email">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                            <input type="text" id="subject"
+                                class="w-full px-4 py-2 bg-[#0F172A] border border-gray-700 rounded-button text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                                placeholder="Subject of your message">
+                        </div>
+
+                        <button type="button"
+                            class="bg-primary hover:bg-primary/90 text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Send
+                            Message</button>
+                    </form>
+                </div>
+
+                <!-- Box 4: Additional Information -->
+                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+                    <div class="h-50 rounded-lg overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.433578500182!2d75.92990520655003!3d11.059847235865284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64da8a1914111%3A0x227ccf818033f8d5!2sKolappuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1747346926456!5m2!1sen!2sin"
+                            width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -819,18 +1061,23 @@ Open until 6:30 pm</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div>
                     <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Kolappuram</a>
-                    <p class="text-gray-400 mb-6">If you're seeking calm, culture, or connection, Kolappuram welcomes you with open arms.</p>
+                    <p class="text-gray-400 mb-6">If you're seeking calm, culture, or connection, Kolappuram welcomes
+                        you with open arms.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/share/18rnEd5ikY/" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                        <a href="https://www.facebook.com/share/18rnEd5ikY/"
+                            class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
                             <i class="ri-facebook-fill"></i>
                         </a>
-                        <a href="https://www.instagram.com/dosthana_kolappuram/" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                        <a href="https://www.instagram.com/dosthana_kolappuram/"
+                            class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
                             <i class="ri-instagram-fill"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                        <a href="#"
+                            class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
                             <i class="ri-twitter-x-fill"></i>
                         </a>
-                        <a href="https://www.youtube.com/@dosthana_kolappuram" class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
+                        <a href="https://www.youtube.com/@dosthana_kolappuram"
+                            class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
                             <i class="ri-youtube-fill"></i>
                         </a>
                     </div>
@@ -870,9 +1117,9 @@ Open until 6:30 pm</p>
                             <div class="w-5 h-5 flex items-center justify-center text-primary mr-3">
                                 <i class="ri-phone-line"></i>
                             </div>
-                            <span class="text-gray-400">9400010539
+                            <span class="text-gray-400"> <a href="tel:+[91][9400010539]">9400010539</a>
 
-</span>
+                            </span>
                         </li>
                         <li class="flex">
                             <div class="w-5 h-5 flex items-center justify-center text-primary mr-3">
@@ -881,7 +1128,7 @@ Open until 6:30 pm</p>
                             <span class="text-gray-400">info@Kolappuram.com</span>
                         </li>
                     </ul>
-                        <!-- <div class="mt-6">
+                    <!-- <div class="mt-6">
                             <h4 class="text-lg font-bold text-white mb-4">We Accept</h4>
                             <div class="flex space-x-3">
                                 <div class="w-10 h-10 flex items-center justify-center text-gray-400 cursor-pointer">
@@ -904,9 +1151,15 @@ Open until 6:30 pm</p>
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 Kolappuram. All rights reserved.</p>
                     <div class="flex space-x-6">
-                        <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Privacy Policy</a>
-                        <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Terms of Service</a>
-                        <a href="#" class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Terms & Conditions</a>
+                        <a href="#"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Privacy
+                            Policy</a>
+                        <a href="#"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Terms of
+                            Service</a>
+                        <a href="#"
+                            class="text-gray-500 hover:text-primary text-sm transition-colors cursor-pointer">Terms &
+                            Conditions</a>
                     </div>
                 </div>
             </div>
@@ -916,28 +1169,35 @@ Open until 6:30 pm</p>
     <!-- Booking Modal -->
     <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center hidden-modal">
         <div class="absolute inset-0 bg-black/70" id="modalOverlay"></div>
-        <div class="modal-content relative bg-[#1E293B] rounded-lg max-w-2xl w-full mx-4 shadow-2xl border border-gray-700">
+        <div
+            class="modal-content relative bg-[#1E293B] rounded-lg max-w-2xl w-full mx-4 shadow-2xl border border-gray-700">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-2xl font-bold text-white">Book Your Stay</h3>
-                    <button id="closeModal" class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center cursor-pointer">
+                    <button id="closeModal"
+                        class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center cursor-pointer">
                         <i class="ri-close-line ri-lg"></i>
                     </button>
                 </div>
                 <form class="booking-form space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="modal-check-in" class="block text-sm font-medium text-gray-300 mb-1">Check-in Date</label>
-                            <input type="date" id="modal-check-in" class="w-full px-4 py-2 !rounded-button" min="2025-05-15">
+                            <label for="modal-check-in" class="block text-sm font-medium text-gray-300 mb-1">Check-in
+                                Date</label>
+                            <input type="date" id="modal-check-in" class="w-full px-4 py-2 !rounded-button"
+                                min="2025-05-15">
                         </div>
                         <div>
-                            <label for="modal-check-out" class="block text-sm font-medium text-gray-300 mb-1">Check-out Date</label>
-                            <input type="date" id="modal-check-out" class="w-full px-4 py-2 !rounded-button" min="2025-05-16">
+                            <label for="modal-check-out" class="block text-sm font-medium text-gray-300 mb-1">Check-out
+                                Date</label>
+                            <input type="date" id="modal-check-out" class="w-full px-4 py-2 !rounded-button"
+                                min="2025-05-16">
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="modal-adults" class="block text-sm font-medium text-gray-300 mb-1">Adults</label>
+                            <label for="modal-adults"
+                                class="block text-sm font-medium text-gray-300 mb-1">Adults</label>
                             <select id="modal-adults" class="w-full px-4 py-2 !rounded-button pr-8">
                                 <option value="1">1</option>
                                 <option value="2" selected>2</option>
@@ -946,7 +1206,8 @@ Open until 6:30 pm</p>
                             </select>
                         </div>
                         <div>
-                            <label for="modal-children" class="block text-sm font-medium text-gray-300 mb-1">Children</label>
+                            <label for="modal-children"
+                                class="block text-sm font-medium text-gray-300 mb-1">Children</label>
                             <select id="modal-children" class="w-full px-4 py-2 !rounded-button pr-8">
                                 <option value="0" selected>0</option>
                                 <option value="1">1</option>
@@ -956,7 +1217,8 @@ Open until 6:30 pm</p>
                         </div>
                     </div>
                     <div>
-                        <label for="modal-room-type" class="block text-sm font-medium text-gray-300 mb-1">Room Type</label>
+                        <label for="modal-room-type" class="block text-sm font-medium text-gray-300 mb-1">Room
+                            Type</label>
                         <select id="modal-room-type" class="w-full px-4 py-2 !rounded-button pr-8">
                             <option value="">Select Room Type</option>
                             <option value="deluxe">Deluxe Ocean Room</option>
@@ -966,21 +1228,30 @@ Open until 6:30 pm</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label for="modal-name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
-                            <input type="text" id="modal-name" class="w-full px-4 py-2 !rounded-button" placeholder="Your full name">
+                            <label for="modal-name" class="block text-sm font-medium text-gray-300 mb-1">Full
+                                Name</label>
+                            <input type="text" id="modal-name" class="w-full px-4 py-2 !rounded-button"
+                                placeholder="Your full name">
                         </div>
                         <div>
-                            <label for="modal-email" class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                            <input type="email" id="modal-email" class="w-full px-4 py-2 !rounded-button" placeholder="Your email address">
+                            <label for="modal-email" class="block text-sm font-medium text-gray-300 mb-1">Email
+                                Address</label>
+                            <input type="email" id="modal-email" class="w-full px-4 py-2 !rounded-button"
+                                placeholder="Your email address">
                         </div>
                     </div>
                     <div>
-                        <label for="modal-special-requests" class="block text-sm font-medium text-gray-300 mb-1">Special Requests</label>
-                        <textarea id="modal-special-requests" rows="3" class="w-full px-4 py-2 !rounded-button" placeholder="Any special requests or requirements"></textarea>
+                        <label for="modal-special-requests" class="block text-sm font-medium text-gray-300 mb-1">Special
+                            Requests</label>
+                        <textarea id="modal-special-requests" rows="3" class="w-full px-4 py-2 !rounded-button"
+                            placeholder="Any special requests or requirements"></textarea>
                     </div>
                     <div class="flex justify-end space-x-4">
-                        <button type="button" id="cancelBooking" class="bg-transparent border border-gray-600 hover:bg-gray-700 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Cancel</button>
-                        <button type="button" id="submitBooking" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button>
+                        <button type="button" id="cancelBooking"
+                            class="bg-transparent border border-gray-600 hover:bg-gray-700 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Cancel</button>
+                        <button type="button" id="submitBooking"
+                            class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book
+                            Now</button>
                     </div>
                 </form>
             </div>
@@ -990,25 +1261,28 @@ Open until 6:30 pm</p>
     <!-- Confirmation Modal -->
     <div id="confirmationModal" class="fixed inset-0 z-50 flex items-center justify-center hidden-modal">
         <div class="absolute inset-0 bg-black/70"></div>
-        <div class="modal-content relative bg-[#1E293B] rounded-lg max-w-md w-full mx-4 shadow-2xl border border-gray-700">
+        <div
+            class="modal-content relative bg-[#1E293B] rounded-lg max-w-md w-full mx-4 shadow-2xl border border-gray-700">
             <div class="p-6 text-center">
                 <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="ri-check-line ri-2x text-primary"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">Booking Confirmed!</h3>
-                <p class="text-gray-300 mb-6">Thank you for choosing Serenity Resort & Spa. Your booking request has been received. We'll send a confirmation email shortly with all the details.</p>
-                <button id="closeConfirmation" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Close</button>
+                <p class="text-gray-300 mb-6">Thank you for choosing Serenity Resort & Spa. Your booking request has
+                    been received. We'll send a confirmation email shortly with all the details.</p>
+                <button id="closeConfirmation"
+                    class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap cursor-pointer">Close</button>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Mobile menu toggle
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
-            
-            mobileMenuBtn.addEventListener('click', function() {
+
+            mobileMenuBtn.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
             });
 
@@ -1053,19 +1327,19 @@ Open until 6:30 pm</p>
             closeModal.addEventListener('click', closeBookingModal);
             modalOverlay.addEventListener('click', closeBookingModal);
             cancelBooking.addEventListener('click', closeBookingModal);
-            
-            submitBooking.addEventListener('click', function() {
+
+            submitBooking.addEventListener('click', function () {
                 closeBookingModal();
                 openConfirmationModal();
             });
-            
+
             closeConfirmation.addEventListener('click', closeConfirmationModal);
             // Set minimum dates for date inputs
             const today = new Date().toISOString().split('T')[0];
             const tomorrow = new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             const tomorrowStr = tomorrow.toISOString().split('T')[0];
-            
+
             document.getElementById('check-in').min = today;
             document.getElementById('check-out').min = tomorrowStr;
             document.getElementById('modal-check-in').min = today;
@@ -1074,15 +1348,15 @@ Open until 6:30 pm</p>
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    
+
                     // Close mobile menu if open
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
-                    
+
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
-                    
+
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
@@ -1095,4 +1369,5 @@ Open until 6:30 pm</p>
         });
     </script>
 </body>
+
 </html>
