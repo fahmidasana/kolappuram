@@ -74,61 +74,63 @@
             font-size: 2.5em;
             fill: #fff;
         }
-/* From Uiverse.io by joe-watson-sbf */ 
-.flip-card {
-  background-color: transparent;
-  width: 190px;
-  height: 254px;
-  perspective: 1000px;
-  font-family: sans-serif;
-}
 
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
-}
+        /* From Uiverse.io by joe-watson-sbf */
+        .flip-card {
+            background-color: transparent;
+            width: 190px;
+            height: 254px;
+            perspective: 1000px;
+            font-family: sans-serif;
+        }
 
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
+        .title {
+            font-size: 1.5em;
+            font-weight: 900;
+            text-align: center;
+            margin: 0;
+        }
 
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
 
-.flip-card-front, .flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid rgb(13, 13, 13);
-  border-radius: 1rem;
-}
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
 
-.flip-card-front {
-  background: linear-gradient(120deg, rgb(37, 36, 36) 60%, rgb(16, 15, 14) 88%,
-     rgb(27, 24, 22) 40%, rgba(30, 26, 25, 0.603) 48%);
-  color: rgb(64, 34, 23);
-}
+        .flip-card-front,
+        .flip-card-back {
+            box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 1px solid rgb(13, 13, 13);
+            border-radius: 1rem;
+        }
 
-.flip-card-back {
-  background: linear-gradient(120deg, rgb(13, 12, 12) 30%, rgb(105, 75, 68) 88%,
-     bisque 40%, rgb(255, 185, 160) 78%);
-  color: white;
-  transform: rotateY(180deg);
-}
+        .flip-card-front {
+            background: linear-gradient(120deg, rgb(37, 36, 36) 60%, rgb(16, 15, 14) 88%,
+                    rgb(27, 24, 22) 40%, rgba(30, 26, 25, 0.603) 48%);
+            color: rgb(64, 34, 23);
+        }
+
+        .flip-card-back {
+            background: linear-gradient(120deg, rgb(13, 12, 12) 30%, rgb(105, 75, 68) 88%,
+                    bisque 40%, rgb(255, 185, 160) 78%);
+            color: white;
+            transform: rotateY(180deg);
+        }
 
         .hero-gradient {
             background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0));
@@ -247,6 +249,50 @@
 
         .show-modal .modal-content {
             transform: translateY(0);
+        }
+
+        /* From Uiverse.io by AlimurtuzaCodes */
+        .btn {
+            border: none;
+            width: 15em;
+            height: 5em;
+            border-radius: 3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            background: #1C1A1C;
+            cursor: pointer;
+            transition: all 450ms ease-in-out;
+        }
+
+        .sparkle {
+            fill: #AAAAAA;
+            transition: all 800ms ease;
+        }
+
+        .text {
+            font-weight: 600;
+            color: #AAAAAA;
+            font-size: medium;
+        }
+
+        .btn:hover {
+            background: linear-gradient(0deg, #A47CF3, #683FEA);
+            box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+                inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+                0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+                0px 0px 180px 0px #9917FF;
+            transform: translateY(-2px);
+        }
+
+        .btn:hover .text {
+            color: white;
+        }
+
+        .btn:hover .sparkle {
+            fill: white;
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -448,6 +494,8 @@
                     <button
                         class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Discover
                         Our Story</button>
+                    <!-- From Uiverse.io by AlimurtuzaCodes -->
+                  
                 </div>
             </div>
         </div>
@@ -569,9 +617,16 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Amenity Card 1 -->
                 <div class="amenity-card rounded-lg p-6 cursor-pointer">
-                    <!-- <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                        <i class="ri-water-flash-line ri-3x"></i>
-                    </div> -->
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-plane-tilt">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M14.5 6.5l3 -2.9a2.05 2.05 0 0 1 2.9 2.9l-2.9 3l2.5 7.5l-2.5 2.55l-3.5 -6.55l-3 3v3l-2 2l-1.5 -4.5l-4.5 -1.5l2 -2h3l3 -3l-6.5 -3.5l2.5 -2.5l7.5 2.5z" />
+                        </svg>
+                    </div>
+
                     <h3 class="text-xl font-bold text-white mb-3">AIRPORTS NEARBY</h3>
                     <p class="text-gray-300 mb-4">Calicut International Airport <br>
                         India (9km) <br> <br>Cochin International Airport <br>
@@ -583,9 +638,24 @@
                 </div>
                 <!-- Amenity Card 2 -->
                 <div class="amenity-card rounded-lg p-6 cursor-pointer">
-                    <!-- <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                        <i class="ri-spa-line ri-3x"></i>
-                    </div> -->
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-buildings">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 21v-15c0 -1 1 -2 2 -2h5c1 0 2 1 2 2v15" />
+                            <path d="M16 8h2c1 0 2 1 2 2v11" />
+                            <path d="M3 21h18" />
+                            <path d="M10 12v0" />
+                            <path d="M10 16v0" />
+                            <path d="M10 8v0" />
+                            <path d="M7 12v0" />
+                            <path d="M7 16v0" />
+                            <path d="M7 8v0" />
+                            <path d="M17 12v0" />
+                            <path d="M17 16v0" />
+                        </svg>
+                    </div>
                     <h3 class="text-xl font-bold text-white mb-3">AKSHAYA CENTRE KOLAPPURAM</h3>
                     <h1>Center Address</h1>
                     <p class="text-gray-300 mb-4"> <br>
@@ -603,9 +673,15 @@
                 </div>
                 <!-- Amenity Card 3 -->
                 <div class="amenity-card rounded-lg p-6 cursor-pointer">
-                    <!-- <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                        <i class="ri-restaurant-line ri-3x"></i>
-                    </div> -->
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-school">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                        </svg>
+                    </div>
                     <h3 class="text-xl font-bold text-white mb-3">GHS KOLAPPURAM </h3>
                     <p class="text-gray-300 mb-4">UDISE Code: 32051300706 <br>Year Of Establishment: 1924 <br> <a
                             href="tel:+[91][ 0494 246 8271]"> 0494 246 8271 </a><br> AR Nagar Po ,Malappuram
@@ -618,9 +694,14 @@
                 </div>
                 <!-- Amenity Card 4 -->
                 <div class="amenity-card rounded-lg p-6 cursor-pointer">
-                    <!-- <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                        <i class="ri-fitness-line ri-3x"></i>
-                    </div> -->
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                            fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-gas-station">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M3 21a1 1 0 0 1 0 -2v-13a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v4a3 3 0 0 1 3 3v3a.5 .5 0 1 0 1 0v-6a2 2 0 0 1 -2 -2v-.585l-.707 -.708a1 1 0 0 1 -.083 -1.32l.083 -.094a1 1 0 0 1 1.414 0l3.003 3.002l.095 .112l.028 .04l.044 .073l.052 .11l.031 .09l.02 .076l.012 .078l.008 .126v7a2.5 2.5 0 1 1 -5 0v-3a1 1 0 0 0 -1 -1v7a1 1 0 0 1 0 2zm9 -16h-6a1 1 0 0 0 -1 1v4h8v-4a1 1 0 0 0 -1 -1" />
+                        </svg>
+                    </div>
                     <h3 class="text-xl font-bold text-white mb-3">INDIAN OIL FUEL STATION</h3>
                     <p class="text-gray-300 mb-4">
                         SH 65, Kolappuram <br>
@@ -635,9 +716,22 @@
                 </div>
                 <!-- Amenity Card 5 -->
                 <div class="amenity-card rounded-lg p-6 cursor-pointer">
-                    <!-- <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                        <i class="ri-sailboat-line ri-3x"></i>
-                    </div> -->
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40   " viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-building-bank">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 21l18 0" />
+                            <path d="M3 10l18 0" />
+                            <path d="M5 6l7 -3l7 3" />
+                            <path d="M4 10l0 11" />
+                            <path d="M20 10l0 11" />
+                            <path d="M8 14l0 3" />
+                            <path d="M12 14l0 3" />
+                            <path d="M16 14l0 3" />
+                        </svg>
+                    </div>
                     <h3 class="text-xl font-bold text-white mb-3">STATE BANK OF INDIA</h3>
                     <p class="text-gray-300 mb-4">Kolappuram,Kerala <br>676305 <br> <a
                             href="tel:+[91][07947416463 ]">07947416463 </a></p>
@@ -648,9 +742,18 @@
                 </div>
                 <!-- Amenity Card 6 -->
                 <div class="amenity-card rounded-lg p-6 cursor-pointer">
-                    <!-- <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                        <i class="ri-gamepad-line ri-3x"></i>
-                    </div> -->
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-building-hospital">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 21l18 0" />
+                            <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16" />
+                            <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+                            <path d="M10 9l4 0" />
+                            <path d="M12 7l0 4" />
+                        </svg>
+                    </div>
                     <h3 class="text-xl font-bold text-white mb-3">KOLAPPURAM MEDICALS</h3>
                     <p class="text-gray-300 mb-4">N H Kolappuram, Malappuram, <br> Abdurahiman Nagar-676305 <br> <a
                             href="tel:+[91][07947416463 ]">07947416463 </a> <br>
@@ -928,32 +1031,35 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <!-- Box 1: Contact Form -->
-                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+                <div
+                    class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <h3 class="text-xl font-bold text-white mb-6 ">Ward 18 - Ward Member</h3>
                     <!-- From Uiverse.io by codebykay101 -->
                     <div class="container">
-                        <!-- From Uiverse.io by joe-watson-sbf --> 
-<div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <p class="title"><img src="./2020095701801.jpg" alt="" style="height:260px; width:210px; border-radius: 10px;"></p>
-            <p></p>
-        </div>
-        <div class="flip-card-back">
-            <p class="title">	BABY K M</p>
-            <p>WARD 18 <br>KOLAPPURAM SOUTH, A R NAGAR-676305 <br> <a
-                            href="tel:+[91][9947307618 ]">+919947307618 </a></p>
-        </div>
-    </div>
-</div>
-                        
+                        <!-- From Uiverse.io by joe-watson-sbf -->
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <p class="title"><img src="./2020095701801.jpg" alt=""
+                                            style="height:260px; width:210px; border-radius: 10px;"></p>
+                                    <p></p>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p class="title"> BABY K M</p>
+                                    <p>WARD 18 <br>KOLAPPURAM SOUTH, A R NAGAR-676305 <br> <a
+                                            href="tel:+[91][9947307618 ]">+919947307618 </a></p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
 
                 </div>
 
                 <!-- Box 2: Location Information -->
-                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+                <div
+                    class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <h3 class="text-xl font-bold text-white mb-6">Our Location</h3>
                     <div class="space-y-6">
                         <div class="flex">
@@ -991,7 +1097,8 @@
                 </div>
 
                 <!-- Box 3: Contact Information -->
-                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+                <div
+                    class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
 
                     <form class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1024,7 +1131,8 @@
                 </div>
 
                 <!-- Box 4: Additional Information -->
-                <div class="bg-[#1E293B] rounded-lg p-6 shadow-lg border border-gray-800">
+                <div
+                    cclass="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <div class="h-50 rounded-lg overflow-hidden">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.433578500182!2d75.92990520655003!3d11.059847235865284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64da8a1914111%3A0x227ccf818033f8d5!2sKolappuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1747346926456!5m2!1sen!2sin"
