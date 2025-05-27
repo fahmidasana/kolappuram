@@ -52,6 +52,129 @@
             transform: rotate(calc(var(--r) * 1deg));
         }
 
+        /* From Uiverse.io by jolprince_5263 */
+        .card {
+            max-width: fit-content;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            gap: 1rem;
+            backdrop-filter: blur(15px);
+            box-shadow:
+                inset 0 0 20px rgba(255, 255, 255, 0.192),
+                inset 0 0 5px rgba(255, 255, 255, 0.274),
+                0 5px 5px rgba(0, 0, 0, 0.164);
+            transition: 0.5s;
+        }
+
+        .card:hover {
+            animation: ease-out 5s;
+            background: rgba(173, 173, 173, 0.05);
+        }
+
+        .card ul {
+            padding: 1rem;
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .card ul li {
+            cursor: pointer;
+        }
+
+        .svg {
+            transition: all 0.3s;
+            /* if you find some problems change w - h : 30px*/
+            padding: 1rem;
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            color: rgb(255, 174, 0);
+            fill: currentColor;
+            box-shadow:
+                inset 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 5px rgba(255, 255, 255, 0.5),
+                0 5px 5px rgba(0, 0, 0, 0.164);
+        }
+
+        .text {
+            opacity: 0;
+            border-radius: 5px;
+            padding: 5px;
+            transition: all 0.3s;
+            color: rgb(255, 174, 0);
+            background-color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            z-index: 9999;
+            box-shadow:
+                -5px 0 1px rgba(153, 153, 153, 0.2),
+                -10px 0 1px rgba(153, 153, 153, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 5px rgba(255, 255, 255, 0.5),
+                0 5px 5px rgba(0, 0, 0, 0.082);
+        }
+
+        /*isometric prooyection*/
+        .iso-pro {
+            transition: 0.5s;
+        }
+
+        .iso-pro:hover a>.svg {
+            transform: translate(15px, -15px);
+            border-radius: 100%;
+        }
+
+        .iso-pro:hover .text {
+            opacity: 1;
+            transform: translate(25px, -2px) skew(-5deg);
+        }
+
+        .iso-pro:hover .svg {
+            transform: translate(5px, -5px);
+        }
+
+        .iso-pro span {
+            opacity: 0;
+            position: absolute;
+            color: #1877f2;
+            border-color: #1877f2;
+            box-shadow:
+                inset 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 5px rgba(255, 255, 255, 0.5),
+                0 5px 5px rgba(0, 0, 0, 0.164);
+            border-radius: 50%;
+            transition: all 0.3s;
+            height: 60px;
+            width: 60px;
+        }
+
+        .iso-pro:hover span {
+            opacity: 1;
+        }
+
+        .iso-pro:hover span:nth-child(1) {
+            opacity: 0.2;
+        }
+
+        .iso-pro:hover span:nth-child(2) {
+            opacity: 0.4;
+            transform: translate(5px, -5px);
+        }
+
+        .iso-pro:hover span:nth-child(3) {
+            opacity: 0.6;
+            transform: translate(10px, -10px);
+        }
+
+
         .container:hover .glass {
             transform: rotate(0deg);
             margin: 0 10px;
@@ -322,26 +445,18 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-[#0F172A] border-b border-gray-800">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home"
-                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Home</a>
-                <a href="#about"
-                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">About</a>
-                <a href="#rooms"
-                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Rooms</a>
-                <a href="#amenities"
-                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Amenities</a>
-                <a href="#gallery"
-                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Gallery</a>
-                <a href="#contact"
-                    class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Contact</a>
-                <button id="mobileBookNowBtn"
-                    class="w-full mt-3 bg-primary hover:bg-primary/90 text-white px-3 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book
-                    Now</button>
-            </div>
-        </div>
+     <!-- Mobile menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-[#0F172A] border-b border-gray-800">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#home" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Home</a>
+        <a href="#about" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">About</a>
+        <a href="#rooms" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Restaurants </a>
+        <a href="#amenities" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Amenities</a>
+        <a href="#gallery" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Gallery</a>
+        <a href="#contact" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Contact</a>
+    </div>
+</div>
+
     </nav>
 
     <!-- Hero Section -->
@@ -445,14 +560,13 @@
                 </div>
                 <div class="w-full lg:w-1/2 mt-12 lg:mt-0"> <a href="#"
                         class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">A Place With Rich History</a>
-                    <p class="text-gray-300 mb-6">Kolappuram has preserved its historical charm while embracing modern
+                    <!-- <p class="text-gray-300 mb-6">Kolappuram has preserved its historical charm while embracing modern
                         comforts. Our village is known for its traditional architecture, friendly community, and
-                        sustainable living practices.</p>
+                        sustainable living practices.</p> -->
                     <p class="text-gray-300 mb-8">Kolappuram is a place within Abdul Rahiman Nagar Panchayat in
                         Malappuram district, Kerala, India. It's located near National Highway 17. The road leading to
                         Calicut International Airport begins from Kolappuram. Nearby areas include Mampuram and
-                        Tirurangaadi. The provided information mainly focuses on its location and proximity to other
-                        places, rather than specific historical details.</p>
+                        Tirurangaadi. .</p>
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div class="flex items-start">
                             <!-- <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
@@ -476,26 +590,27 @@
                             <!-- <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
                                 <i class="ri-spa-line ri-2x"></i>
                             </div> -->
-                            <div>
+                            <!-- <div>
                                 <h4 class="text-lg font-semibold text-white mb-2"> District</h4>
                                 <p class="text-gray-400">Malappuram</p>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="flex items-start">
                             <!-- <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
                                 <i class="ri-footprint-line ri-2x"></i>
                             </div> -->
-                            <div>
+                            <!-- <div>
                                 <h4 class="text-lg font-semibold text-white mb-2">Pin</h4>
                                 <p class="text-gray-400">676305</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <button
-                        class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">Discover
-                        Our Story</button>
+                        class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">
+                        <a
+                            href="https://ml.wikipedia.org/wiki/%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82#:~:text=%E0%B4%AE%E0%B4%B2%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%9C%E0%B4%BF%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B4%AF%E0%B4%BF%E0%B4%B2%E0%B5%86%20%E0%B4%85%E0%B4%AC%E0%B5%8D%E0%B4%A6%E0%B5%81%E0%B4%B1%E0%B4%B9%E0%B4%AE%E0%B4%BE%E0%B5%BB%20%E0%B4%A8%E0%B4%97%E0%B5%BC%20%E0%B4%AA%E0%B4%9E%E0%B5%8D%E0%B4%9A%E0%B4%BE%E0%B4%AF%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%BF%E0%B4%B2%E0%B5%86,%E0%B4%AA%E0%B5%8B%E0%B4%B5%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%20%E0%B4%AA%E0%B4%BE%E0%B4%A4%20%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%AE%E0%B5%81%E0%B4%A4%E0%B5%BD%20%E0%B4%A4%E0%B5%81%E0%B4%9F%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B5%81."></a>Discover </button>
                     <!-- From Uiverse.io by AlimurtuzaCodes -->
-                  
+
                 </div>
             </div>
         </div>
@@ -535,7 +650,7 @@
                             <button
                                 class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
                                 <a href="https://hotelthandoorhut.dialndial.com/"> View Details</a>
-                              
+
                                 <i class="ri-arrow-right-line ml-1"></i>
                             </button>
                             <!-- <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button> -->
@@ -561,7 +676,7 @@
                         <div class="flex justify-between items-center">
                             <button
                                 class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
-                               <a href="https://hotelhilux.dialndial.com/">  View Details</a>
+                                <a href="https://hotelhilux.dialndial.com/"> View Details</a>
                                 <i class="ri-arrow-right-line ml-1"></i>
                             </button>
                             <!-- <button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button whitespace-nowrap cursor-pointer">Book Now</button> -->
@@ -572,9 +687,9 @@
                 <div class="room-card rounded-lg overflow-hidden shadow-lg cursor-pointer">
                     <div class="relative h-64">
                         <img src="./m11.png" alt="Beachfront Villa" class="w-full h-full object-cover object-top">
-                        <div
-                            class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
-                            From $899/night</div>
+                            <!-- <div
+                                class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                                From $899/night</div> -->
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Al Farooj</h3>
@@ -598,12 +713,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <button
-                    class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View
-                    All Restaurants</button>
-            </div>
-        </div>
+
     </section>
 
     <!-- Amenities Section -->
@@ -633,7 +743,7 @@
                         India (9km) <br> <br>Cochin International Airport <br>
                         India (113km) <br> <br>Coimbatore International Airport (CJB) <br>India (121km)</p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
-                       <a href="https://fk.maptons.com/1489682">   Learn More</a>
+                        <a href="https://fk.maptons.com/1489682"> Learn More</a>
                         <i class="ri-arrow-right-line ml-1"></i>
                     </button>
                 </div>
@@ -668,7 +778,9 @@
 
                     </p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
-                       <a href="https://akshaya.kerala.gov.in/centers/1871/akshaya-centre-kolappuram-malappuram?page=3"> Learn More </a>
+                        <a
+                            href="https://akshaya.kerala.gov.in/centers/1871/akshaya-centre-kolappuram-malappuram?page=3">
+                            Learn More </a>
                         <i class="ri-arrow-right-line ml-1"></i>
                     </button>
                 </div>
@@ -711,7 +823,9 @@
                         Open 24 Hours
                     </p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
-                       <a href="https://locator.iocl.com/indianoil-kannamangalam-fuels-petrol-pump-kolappuram-malappuram-279164/Home#:~:text=About%20IndianOil&text=The%20address%20of%20this%20fuel,%2C%20Kolappuram%2C%20Malappuram%2C%20Kerala."> Learn More </a>
+                        <a
+                            href="https://locator.iocl.com/indianoil-kannamangalam-fuels-petrol-pump-kolappuram-malappuram-279164/Home#:~:text=About%20IndianOil&text=The%20address%20of%20this%20fuel,%2C%20Kolappuram%2C%20Malappuram%2C%20Kerala.">
+                            Learn More </a>
                         <i class="ri-arrow-right-line ml-1"></i>
                     </button>
                 </div>
@@ -737,7 +851,8 @@
                     <p class="text-gray-300 mb-4">Kolappuram,Kerala <br>676305 <br> <a
                             href="tel:+[91][07947416463 ]">07947416463 </a></p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
-                         <a href="https://sbi.banklocationmaps.com/en/branch/307620-sbi-branch-kolappuram-kerala-676305">Learn More</a>
+                        <a href="https://sbi.banklocationmaps.com/en/branch/307620-sbi-branch-kolappuram-kerala-676305">Learn
+                            More</a>
                         <i class="ri-arrow-right-line ml-1"></i>
                     </button>
                 </div>
@@ -760,7 +875,9 @@
                             href="tel:+[91][07947416463 ]">07947416463 </a> <br>
                         Open until 6:30 pm</p>
                     <button class="text-primary hover:text-primary/80 font-medium flex items-center cursor-pointer">
-                       <a href="https://www.justdial.com/Malappuram/Kolappuram-Medicals-Abdurahiman-Nagar/9999P4935-4935-110210143720-H4A4_BZDET">  Learn More</a>
+                        <a
+                            href="https://www.justdial.com/Malappuram/Kolappuram-Medicals-Abdurahiman-Nagar/9999P4935-4935-110210143720-H4A4_BZDET">
+                            Learn More</a>
                         <i class="ri-arrow-right-line ml-1"></i>
                     </button>
                 </div>
@@ -851,11 +968,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <button
-                    class="bg-transparent border-2 border-primary hover:bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">View
-                    Full Gallery</button>
-            </div>
+
         </div>
     </section>
 
@@ -1025,8 +1138,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Get in touch with us to share your thoughts, ask questions,
-                    or connect with our village community.</p>
+                <!-- <p class="text-gray-300 max-w-2xl mx-auto">Get in touch with us to share your thoughts, ask questions,
+                    or connect with our village community.</p> -->
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
 
@@ -1035,9 +1148,9 @@
                 <div
                     class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <h3 class="text-xl font-bold text-white mb-6 ">Ward 18 - Ward Member</h3>
-                    <!-- From Uiverse.io by codebykay101 -->
+                  
                     <div class="container">
-                        <!-- From Uiverse.io by joe-watson-sbf -->
+                      
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
@@ -1059,6 +1172,7 @@
                 </div>
 
                 <!-- Box 2: Location Information -->
+                 
                 <div
                     class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <h3 class="text-xl font-bold text-white mb-6">Our Location</h3>
@@ -1172,7 +1286,7 @@
                     <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block">Kolappuram</a>
                     <p class="text-gray-400 mb-6">If you're seeking calm, culture, or connection, Kolappuram welcomes
                         you with open arms.</p>
-                    <div class="flex space-x-4">
+                    <!-- <div class="flex space-x-4">
                         <a href="https://www.facebook.com/share/18rnEd5ikY/"
                             class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
                             <i class="ri-facebook-fill"></i>
@@ -1189,7 +1303,51 @@
                             class="text-gray-400 hover:text-primary transition-colors w-8 h-8 flex items-center justify-center cursor-pointer">
                             <i class="ri-youtube-fill"></i>
                         </a>
+                    </div> --><!-- From Uiverse.io by jolprince_5263 -->
+                    <div class="card">
+                        <ul>
+                            <li class="iso-pro">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <a href="https://www.facebook.com/share/18rnEd5ikY/">
+                                    <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                        <path
+                                            d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
+                                        </path>
+                                    </svg></a>
+                                <div class="text">Facebook</div>
+                            </li>
+                            <li class="iso-pro">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <a href="https://www.youtube.com/@dosthana_kolappuram" target="_blank">
+                                    <!-- YouTube SVG Icon -->
+                                    <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg" class="svg">
+                                        <path
+                                            d="M549.7 124.1c-6.3-23.8-24.9-42.5-48.6-48.9C456.7 64 288 64 288 64s-168.7 0-213.1 11.2c-23.7 6.4-42.3 25.1-48.6 48.9C16 168.5 16 256 16 256s0 87.5 10.3 131.9c6.3 23.8 24.9 42.5 48.6 48.9C119.3 448 288 448 288 448s168.7 0 213.1-11.2c23.7-6.4 42.3-25.1 48.6-48.9C560 343.5 560 256 560 256s0-87.5-10.3-131.9zM232 334.7V177.3L361.8 256 232 334.7z" />
+                                    </svg>
+                                </a>
+                                <div class="text">YouTube</div>
+                            </li>
+
+                            <li class="iso-pro">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <a href="https://www.instagram.com/dosthana_kolappuram/">
+                                    <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" class="svg">
+                                        <path
+                                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <div class="text">Instagram</div>
+                            </li>
+                        </ul>
                     </div>
+
                 </div>
                 <div>
                     <!-- <h4 class="text-lg font-bold text-white mb-6">Quick Links</h4>
@@ -1394,6 +1552,13 @@
             mobileMenuBtn.addEventListener('click', function () {
                 mobileMenu.classList.toggle('hidden');
             });
+            // Close mobile menu when any link is clicked
+document.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+    });
+});
+
 
             // Booking modal functionality
             const bookingModal = document.getElementById('bookingModal');
