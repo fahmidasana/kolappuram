@@ -11,7 +11,7 @@
         href="https://png.pngtree.com/png-vector/20230413/ourmid/pngtree-3d-location-icon-clipart-in-transparent-background-vector-png-image_6704161.png"
         type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -22,160 +22,9 @@
         :where([class^="ri-"])::before {
             content: "\f3c2";
         }
-          nm {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 90px;
-            color: #333;
-       }
 
-        .weather-container {
-            max-width: 700px;
-               
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            overflow: hidden;
-        }
+       
 
-        .weather-container h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-
-        .weather-card {
-            padding: 20px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: white;
-        }
-
-        .location h2 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .location p {
-            margin: 5px 0 0;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
-        .current-weather {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .temperature {
-            font-size: 48px;
-            font-weight: bold;
-        }
-
-        .temperature .unit {
-            font-size: 24px;
-            vertical-align: super;
-        }
-
-        .weather-icon {
-            text-align: center;
-        }
-
-        .weather-icon i {
-            font-size: 64px;
-            margin-bottom: 5px;
-        }
-
-        .weather-icon p {
-            margin: 0;
-            text-transform: capitalize;
-        }
-
-        .weather-details {
-            display: flex;
-            justify-content: space-around;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-
-        .detail {
-            text-align: center;
-        }
-
-        .detail i {
-            display: block;
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .forecast {
-            margin-top: 30px;
-        }
-
-        .forecast h3 {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .hourly-forecast {
-            display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            padding: 10px 0;
-        }
-
-        .hourly-item {
-            flex: 0 0 auto;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            min-width: 60px;
-        }
-
-        .hourly-item p {
-            margin: 5px 0;
-        }
-
-        .hourly-item i {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .api-info {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            opacity: 0.7;
-        }
-
-        .api-info a {
-            color: white;
-        }
-
-        /* Responsive design */
-        @media (max-width: 600px) {
-            .current-weather {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .weather-details {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .temperature {
-                font-size: 36px;
-            }
-        }
         /* From Uiverse.io by gharsh11032000 */
         .cardqw {
             position: relative;
@@ -626,6 +475,10 @@
             transform: translateY(0);
         }
 
+
+       
+
+
         /* From Uiverse.io by AlimurtuzaCodes */
         .btn {
             border: none;
@@ -697,17 +550,24 @@
                 </div>
             </div>
         </div>
-     <!-- Mobile menu -->
-<div id="mobileMenu" class="hidden md:hidden bg-[#0F172A] border-b border-gray-800">
-    <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#home" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Home</a>
-        <a href="#about" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">About</a>
-        <a href="#rooms" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Restaurants </a>
-        <a href="#amenities" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Amenities</a>
-        <a href="#gallery" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Gallery</a>
-        <a href="#contact" class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Contact</a>
-    </div>
-</div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#0F172A] border-b border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home"
+                    class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Home</a>
+                <a href="#about"
+                    class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">About</a>
+                <a href="#rooms"
+                    class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Restaurants
+                </a>
+                <a href="#amenities"
+                    class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Amenities</a>
+                <a href="#gallery"
+                    class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Gallery</a>
+                <a href="#contact"
+                    class="mobile-menu-link block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 !rounded-button">Contact</a>
+            </div>
+        </div>
 
     </nav>
 
@@ -856,16 +716,17 @@
                                 <p class="text-gray-400">676305</p>
                             </div>
                         </div> -->
-                    </div>
-                    <button
-                        class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">
-                        <a
-                            href="https://ml.wikipedia.org/wiki/%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82#:~:text=%E0%B4%AE%E0%B4%B2%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%9C%E0%B4%BF%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B4%AF%E0%B4%BF%E0%B4%B2%E0%B5%86%20%E0%B4%85%E0%B4%AC%E0%B5%8D%E0%B4%A6%E0%B5%81%E0%B4%B1%E0%B4%B9%E0%B4%AE%E0%B4%BE%E0%B5%BB%20%E0%B4%A8%E0%B4%97%E0%B5%BC%20%E0%B4%AA%E0%B4%9E%E0%B5%8D%E0%B4%9A%E0%B4%BE%E0%B4%AF%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%BF%E0%B4%B2%E0%B5%86,%E0%B4%AA%E0%B5%8B%E0%B4%B5%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%20%E0%B4%AA%E0%B4%BE%E0%B4%A4%20%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%AE%E0%B5%81%E0%B4%A4%E0%B5%BD%20%E0%B4%A4%E0%B5%81%E0%B4%9F%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B5%81."></a>Discover </button>
-                    <!-- From Uiverse.io by AlimurtuzaCodes -->
+                        </div>
+                        <button
+                            class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">
+                            <a
+                                href="https://ml.wikipedia.org/wiki/%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82#:~:text=%E0%B4%AE%E0%B4%B2%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%9C%E0%B4%BF%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B4%AF%E0%B4%BF%E0%B4%B2%E0%B5%86%20%E0%B4%85%E0%B4%AC%E0%B5%8D%E0%B4%A6%E0%B5%81%E0%B4%B1%E0%B4%B9%E0%B4%AE%E0%B4%BE%E0%B5%BB%20%E0%B4%A8%E0%B4%97%E0%B5%BC%20%E0%B4%AA%E0%B4%9E%E0%B5%8D%E0%B4%9A%E0%B4%BE%E0%B4%AF%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%BF%E0%B4%B2%E0%B5%86,%E0%B4%AA%E0%B5%8B%E0%B4%B5%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%20%E0%B4%AA%E0%B4%BE%E0%B4%A4%20%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%AE%E0%B5%81%E0%B4%A4%E0%B5%BD%20%E0%B4%A4%E0%B5%81%E0%B4%9F%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B5%81."></a>Discover
+                        </button>
+                        <!-- From Uiverse.io by AlimurtuzaCodes -->
 
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Rooms & Suites Section -->
@@ -939,7 +800,7 @@
                 <div class="room-card rounded-lg overflow-hidden shadow-lg cursor-pointer">
                     <div class="relative h-64">
                         <img src="./m11.png" alt="Beachfront Villa" class="w-full h-full object-cover object-top">
-                            <!-- <div
+                        <!-- <div
                                 class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                                 From $899/night</div> -->
                     </div>
@@ -966,6 +827,137 @@
                 </div>
             </div>
 
+    </section>
+    <!-- seoson-->
+      <section id="amenities" class="py-20 bg-[#0F172A]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Best Seasons to Visit</h2>
+                
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               
+                <!-- Amenity Card 4 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="yellow"  class="icon icon-tabler icons-tabler-filled icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 19a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1 -1m-4.95 -2.05a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1 -1.414 -1.414l1.414 -1.414a1 1 0 0 1 1.414 0m11.314 0l1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.414 -1.414a1 1 0 0 1 1.414 -1.414m-5.049 -9.836a5 5 0 1 1 -2.532 9.674a5 5 0 0 1 2.532 -9.674m-9.315 3.886a1 1 0 0 1 0 2h-2a1 1 0 0 1 0 -2zm18 0a1 1 0 0 1 0 2h-2a1 1 0 0 1 0 -2zm-16.364 -6.778l1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.414 -1.414a1 1 0 0 1 1.414 -1.414m14.142 0a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 0 1 -1.414 -1.414l1.414 -1.414a1 1 0 0 1 1.414 0m-7.778 -3.222a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1 -1" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Spring (March-May)</h3>
+                    <p class="text-gray-300 mb-4">
+                      Mild temperatures (15-25°C), <br> blooming flowers, and perfect for hiking. The annual Flower Festival in April <br> is a major attraction.
+                    </p>
+
+                </div>
+                <!-- Amenity Card 5 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                      
+                        <svg  xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="skyblue"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-snowflake"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 4l2 1l2 -1" /><path d="M12 2v6.5l3 1.72" /><path d="M17.928 6.268l.134 2.232l1.866 1.232" /><path d="M20.66 7l-5.629 3.25l.01 3.458" /><path d="M19.928 14.268l-1.866 1.232l-.134 2.232" /><path d="M20.66 17l-5.629 -3.25l-2.99 1.738" /><path d="M14 20l-2 -1l-2 1" /><path d="M12 22v-6.5l-3 -1.72" /><path d="M6.072 17.732l-.134 -2.232l-1.866 -1.232" /><path d="M3.34 17l5.629 -3.25l-.01 -3.458" /><path d="M4.072 9.732l1.866 -1.232l.134 -2.232" /><path d="M3.34 7l5.629 3.25l2.99 -1.738" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Winter (December-February)</h3>
+                    <p class="text-gray-300 mb-4">Snow-covered landscape (0-10°C), winter sports, and cozy fireside stays. Christmas markets are magical.</p>
+                    
+                </div>
+                <!-- Amenity Card 6 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
+                       <svg  xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="skyblue"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-beach"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.553 16.75a7.5 7.5 0 0 0 -10.606 0" /><path d="M18 3.804a6 6 0 0 0 -8.196 2.196l10.392 6a6 6 0 0 0 -2.196 -8.196z" /><path d="M16.732 10c1.658 -2.87 2.225 -5.644 1.268 -6.196c-.957 -.552 -3.075 1.326 -4.732 4.196" /><path d="M15 9l-3 5.196" /><path d="M3 19.25a2.4 2.4 0 0 1 1 -.25a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 1 .25" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Summer (June-August)</h3>
+                    <p class="text-gray-300 mb-4">Warm but pleasant (20-30°C),  <br>great for water activities in the mountain lakes. Ideal escape from city heat.</p>
+                   
+                </div>
+                
+            </div>
+        </div>
+    </section>
+     <!-- Gallery Section -->
+    <section id="Scenery" class="py-20 bg-[#1E293B]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Scenery</h2>
+               
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./11.jpg" alt="Resort Pool"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                          
+                            <p class="text-sm">Nature’s finest colors paint every corner of our village.
+Come explore the simple, pure charm of scenic landscapes.
+
+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./12.jpg" alt="Resort Restaurant"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                           
+                            <p class="text-sm">Wander through green fields and quiet hillsides.
+Discover the natural beauty that defines our village life.
+
+</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./13.jpg" alt="Resort Spa"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                          
+                            <p class="text-sm">The football lovers in our village bring the ground to life with their
+                                passion, teamwork, and endless love for the beautiful game.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./14.jpg" alt="Beach Dining"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <p class="text-sm">Breathe in the calm of nature’s untouched beauty.
+Our village offers views that soothe the soul and inspire peace.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./15.jpg" alt="Fitness Center"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            
+                            <p class="text-sm">A place where every view tells a story of peace and purity.
+Experience the refreshing embrace of nature’s finest sights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="./16.jpg"
+                        class="w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-white text-center p-4">
+                            <p class="text-sm">The football lovers in our village bring the ground to life with their
+                                passion, teamwork, and endless love for the beautiful game.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- Amenities Section -->
@@ -1256,7 +1248,8 @@
                             <p class="card__titleqw"> Sajna Anwar
                             </p>
                             <p class="card__descriptionqw">MOB : 9747662650 <br> email : anvaranvarshan@gmail.com
-                                <br>KOLAPPURAM NORTH WARD MEMBER</p>
+                                <br>KOLAPPURAM NORTH WARD MEMBER
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1267,11 +1260,11 @@
                         <div class="card__contentqw">
                             <p class="card__titleqw">Kallan Riyas
                             </p>
-                            <p class="card__descriptionqw">MOB : <br>email : <br></p>
+                            <p class="card__descriptionqw">MOB :  9947307618<br>email : riyas@gmail.com<br>18 WARD MEMBER <br>Social Worker</p>
                         </div>
                     </div>
                 </div>
-              
+
             </div>
         </div>
     </section>
@@ -1456,13 +1449,13 @@
                 <div
                     class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <h3 class="text-xl font-bold text-white mb-6 ">Ward 18 - Ward Member</h3>
-                  
+
                     <div class="container">
-                      
+
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <p class="title"><img src="./2020095701801.jpg" alt=""
+                                    <p class="title"><img src="./w3.jpg" alt=""
                                             style="height:260px; width:210px; border-radius: 10px;"></p>
                                     <p></p>
                                 </div>
@@ -1480,7 +1473,7 @@
                 </div>
 
                 <!-- Box 2: Location Information -->
-                 
+
                 <div
                     class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <h3 class="text-xl font-bold text-white mb-6">Our Location</h3>
@@ -1555,7 +1548,7 @@
 
                 <!-- Box 4: Additional Information -->
                 <div
-                    cclass="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
+                    class="bg-[#1E293B] rounded-lg p-8 shadow-lg border border-gray-800 hover:border-primary/50 transition-all duration-300">
                     <div class="h-50 rounded-lg overflow-hidden">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7831.433578500182!2d75.92990520655003!3d11.059847235865284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64da8a1914111%3A0x227ccf818033f8d5!2sKolappuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1747346926456!5m2!1sen!2sin"
@@ -1566,54 +1559,8 @@
             </div>
         </div>
     </section>
-     <div class="nm">
-        <div class="weather-container">
-            <h1><i class="wi wi-day-sunny"></i> My Village Weather</h1>
+   
 
-            <div class="weather-card">
-                <div class="location">
-                    <h2 id="location">Loading...</h2>
-                    <p id="date"></p>
-                </div>
-
-                <div class="current-weather">
-                    <div class="temperature">
-                        <span id="temp">--</span>
-                        <span class="unit">°C</span>
-                    </div>
-                    <div class="weather-icon">
-                        <i id="weather-icon" class="wi wi-day-sunny"></i>
-                        <p id="weather-desc">--</p>
-                    </div>
-                </div>
-
-                <div class="weather-details">
-                    <div class="detail">
-                        <i class="wi wi-humidity"></i>
-                        <span id="humidity">--%</span>
-                    </div>
-                    <div class="detail">
-                        <i class="wi wi-strong-wind"></i>
-                        <span id="wind">-- km/h</span>
-                    </div>
-                    <div class="detail">
-                        <i class="wi wi-barometer"></i>
-                        <span id="pressure">-- hPa</span>
-                    </div>
-                </div>
-
-                <div class="forecast">
-                    <h3>Next 24 Hours</h3>
-                    <div id="hourly-forecast" class="hourly-forecast"></div>
-                </div>
-
-                <div class="api-info">
-                    <p>Weather data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Newsletter Section -->
     <!-- <section class="py-16 bg-primary/10">
@@ -1900,7 +1847,7 @@
     </div>
 
     <script>
-          // API Configuration - Using your provided API key and coordinates
+        // API Configuration - Using your provided API key and coordinates
         const API_KEY = 'ea16bd20a948d4f5ac635ea47c24133e';
         const LATITUDE = '11.0510';  // Latitude for your village (Coimbatore area)
         const LONGITUDE = '76.0711'; // Longitude for your village
@@ -2031,11 +1978,11 @@
                 mobileMenu.classList.toggle('hidden');
             });
             // Close mobile menu when any link is clicked
-document.querySelectorAll('.mobile-menu-link').forEach(link => {
-    link.addEventListener('click', function () {
-        mobileMenu.classList.add('hidden');
-    });
-});
+            document.querySelectorAll('.mobile-menu-link').forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
 
 
             // Booking modal functionality
