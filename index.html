@@ -11,6 +11,8 @@
         href="https://png.pngtree.com/png-vector/20230413/ourmid/pngtree-3d-location-icon-clipart-in-transparent-background-vector-png-image_6704161.png"
         type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -20,6 +22,256 @@
         :where([class^="ri-"])::before {
             content: "\f3c2";
         }
+          nm {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 90px;
+            color: #333;
+       }
+
+        .weather-container {
+            max-width: 700px;
+                height: 500px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .weather-container h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .weather-card {
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+        }
+
+        .location h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .location p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .current-weather {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .temperature {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .temperature .unit {
+            font-size: 24px;
+            vertical-align: super;
+        }
+
+        .weather-icon {
+            text-align: center;
+        }
+
+        .weather-icon i {
+            font-size: 64px;
+            margin-bottom: 5px;
+        }
+
+        .weather-icon p {
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .weather-details {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .detail {
+            text-align: center;
+        }
+
+        .detail i {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .forecast {
+            margin-top: 30px;
+        }
+
+        .forecast h3 {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .hourly-forecast {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px 0;
+        }
+
+        .hourly-item {
+            flex: 0 0 auto;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .hourly-item p {
+            margin: 5px 0;
+        }
+
+        .hourly-item i {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .api-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .api-info a {
+            color: white;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .current-weather {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .weather-details {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .temperature {
+                font-size: 36px;
+            }
+        }
+        /* From Uiverse.io by gharsh11032000 */
+        .cardqw {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .cardqw svg {
+            width: 48px;
+            fill: black;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .cardqw:hover {
+            transform: rotate(-5deg) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card__contentqw {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #bcafaf;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .cardqw:hover .card__contentqw {
+            transform: translate(-50%, -50%) rotate(0deg);
+            opacity: 1;
+        }
+
+        .card__titleqw {
+            margin: 0;
+            font-size: 24px;
+            color: black;
+            font-weight: 700;
+        }
+
+        .card__descriptionqw {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: black;
+            line-height: 1.4;
+        }
+
+        .cardqw:hover svg {
+            scale: 0;
+            transform: rotate(-45deg);
+        }
+
+
+        .svg {
+            transition: all 0.3s;
+            /* if you find some problems change w - h : 30px*/
+            padding: 1rem;
+            height: 60px;
+            width: 60px;
+            border-radius: 100%;
+            color: rgb(255, 174, 0);
+            fill: currentColor;
+            box-shadow:
+                inset 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 5px rgba(255, 255, 255, 0.5),
+                0 5px 5px rgba(0, 0, 0, 0.164);
+        }
+
+        .text {
+            opacity: 0;
+            border-radius: 5px;
+            padding: 5px;
+            transition: all 0.3s;
+            color: rgb(255, 174, 0);
+            background-color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            z-index: 9999;
+            box-shadow:
+                -5px 0 1px rgba(153, 153, 153, 0.2),
+                -10px 0 1px rgba(153, 153, 153, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.3),
+                inset 0 0 5px rgba(255, 255, 255, 0.5),
+                0 5px 5px rgba(0, 0, 0, 0.082);
+        }
+
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -971,6 +1223,62 @@
 
         </div>
     </section>
+    <!-- notable features -->
+    <section id="amenities" class="py-20 bg-[#0F172A]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Notable Peoples</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Our village is home to inspiring individuals who have made
+                    remarkable contributions in fields like education, culture, public service, and community
+                    development.</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Amenity Card 1 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <!-- From Uiverse.io by gharsh11032000 -->
+                    <div class="cardqw">
+                        <img src="./w3.jpg" alt="">
+                        <div class="card__contentqw">
+                            <p class="card__titleqw"> Baby Km
+                            </p>
+                            <p class="card__descriptionqw"> Occupation : Asha Worker <br>mob : 9947307618 <br>email :
+                                babykm@gmail.com <br>KOLAPPURAM SOUTH WARD MEMBER</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Amenity Card 2 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="cardqw">
+                        <img src="./w5.jpg" alt="">
+                        <div class="card__contentqw">
+                            <p class="card__titleqw"> Sajna Anwar
+                            </p>
+                            <p class="card__descriptionqw">MOB : 9747662650 <br> email : anvaranvarshan@gmail.com
+                                <br>KOLAPPURAM NORTH WARD MEMBER</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Amenity Card 3 -->
+                <div class="amenity-card rounded-lg p-6 cursor-pointer">
+                    <div class="cardqw">
+                        <img src="./w4.jpg" alt="">
+                        <div class="card__contentqw">
+                            <p class="card__titleqw">Kallan Riyas
+                            </p>
+                            <p class="card__descriptionqw">MOB : <br>email : <br></p>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <!-- Testimonials Section -->
     <!-- <section class="py-20 bg-[#0F172A]">
@@ -1258,6 +1566,54 @@
             </div>
         </div>
     </section>
+     <div class="nm">
+        <div class="weather-container">
+            <h1><i class="wi wi-day-sunny"></i> My Village Weather</h1>
+
+            <div class="weather-card">
+                <div class="location">
+                    <h2 id="location">Loading...</h2>
+                    <p id="date"></p>
+                </div>
+
+                <div class="current-weather">
+                    <div class="temperature">
+                        <span id="temp">--</span>
+                        <span class="unit">°C</span>
+                    </div>
+                    <div class="weather-icon">
+                        <i id="weather-icon" class="wi wi-day-sunny"></i>
+                        <p id="weather-desc">--</p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail">
+                        <i class="wi wi-humidity"></i>
+                        <span id="humidity">--%</span>
+                    </div>
+                    <div class="detail">
+                        <i class="wi wi-strong-wind"></i>
+                        <span id="wind">-- km/h</span>
+                    </div>
+                    <div class="detail">
+                        <i class="wi wi-barometer"></i>
+                        <span id="pressure">-- hPa</span>
+                    </div>
+                </div>
+
+                <div class="forecast">
+                    <h3>Next 24 Hours</h3>
+                    <div id="hourly-forecast" class="hourly-forecast"></div>
+                </div>
+
+                <div class="api-info">
+                    <p>Weather data provided by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Newsletter Section -->
     <!-- <section class="py-16 bg-primary/10">
@@ -1544,6 +1900,128 @@
     </div>
 
     <script>
+          // API Configuration - Using your provided API key and coordinates
+        const API_KEY = 'ea16bd20a948d4f5ac635ea47c24133e';
+        const LATITUDE = '11.0510';  // Latitude for your village (Coimbatore area)
+        const LONGITUDE = '76.0711'; // Longitude for your village
+
+        // DOM Elements
+        const locationElement = document.getElementById('location');
+        const dateElement = document.getElementById('date');
+        const tempElement = document.getElementById('temp');
+        const weatherIconElement = document.getElementById('weather-icon');
+        const weatherDescElement = document.getElementById('weather-desc');
+        const humidityElement = document.getElementById('humidity');
+        const windElement = document.getElementById('wind');
+        const pressureElement = document.getElementById('pressure');
+        const hourlyForecastElement = document.getElementById('hourly-forecast');
+
+        // Weather icon mapping
+        const iconMap = {
+            '01d': 'wi-day-sunny',
+            '01n': 'wi-night-clear',
+            '02d': 'wi-day-cloudy',
+            '02n': 'wi-night-alt-cloudy',
+            '03d': 'wi-cloud',
+            '03n': 'wi-cloud',
+            '04d': 'wi-cloudy',
+            '04n': 'wi-cloudy',
+            '09d': 'wi-rain',
+            '09n': 'wi-rain',
+            '10d': 'wi-day-rain',
+            '10n': 'wi-night-alt-rain',
+            '11d': 'wi-thunderstorm',
+            '11n': 'wi-thunderstorm',
+            '13d': 'wi-snow',
+            '13n': 'wi-snow',
+            '50d': 'wi-fog',
+            '50n': 'wi-fog'
+        };
+
+        // Fetch weather data
+        async function fetchWeather() {
+            try {
+                // Current weather
+                const currentResponse = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}&units=metric`
+                );
+
+                if (!currentResponse.ok) {
+                    throw new Error('Failed to fetch current weather data');
+                }
+
+                const currentData = await currentResponse.json();
+
+                // Forecast (for hourly data)
+                const forecastResponse = await fetch(
+                    `https://api.openweathermap.org/data/2.5/forecast?lat=${LATITUDE}&lon=${LONGITUDE}&appid=${API_KEY}&units=metric&cnt=8`
+                );
+
+                if (!forecastResponse.ok) {
+                    throw new Error('Failed to fetch forecast data');
+                }
+
+                const forecastData = await forecastResponse.json();
+
+                updateWeather(currentData, forecastData);
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+                locationElement.textContent = 'Error loading weather data. Please try again later.';
+                weatherDescElement.textContent = error.message;
+            }
+        }
+
+        // Update the UI with weather data
+        function updateWeather(currentData, forecastData) {
+            // Current weather
+            locationElement.textContent = `${currentData.name || 'Your Village'}, ${currentData.sys?.country || ''}`;
+            dateElement.textContent = new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            tempElement.textContent = Math.round(currentData.main.temp);
+            weatherDescElement.textContent = currentData.weather[0].description;
+            humidityElement.textContent = `${currentData.main.humidity}%`;
+            windElement.textContent = `${Math.round(currentData.wind.speed * 3.6)} km/h`;
+            pressureElement.textContent = `${currentData.main.pressure} hPa`;
+
+            // Set weather icon
+            const iconCode = currentData.weather[0].icon;
+            weatherIconElement.className = `wi ${iconMap[iconCode] || 'wi-day-sunny'}`;
+
+            // Hourly forecast
+            hourlyForecastElement.innerHTML = '';
+            forecastData.list.slice(0, 8).forEach(item => {
+                const hour = new Date(item.dt * 1000).getHours();
+                const hourItem = document.createElement('div');
+                hourItem.className = 'hourly-item';
+
+                const hourIcon = document.createElement('i');
+                const forecastIconCode = item.weather[0].icon;
+                hourIcon.className = `wi ${iconMap[forecastIconCode] || 'wi-day-sunny'}`;
+
+                const hourTime = document.createElement('p');
+                hourTime.textContent = `${hour}:00`;
+
+                const hourTemp = document.createElement('p');
+                hourTemp.textContent = `${Math.round(item.main.temp)}°`;
+
+                hourItem.appendChild(hourIcon);
+                hourItem.appendChild(hourTime);
+                hourItem.appendChild(hourTemp);
+                hourlyForecastElement.appendChild(hourItem);
+            });
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchWeather();
+            // Refresh every 30 minutes (1,800,000 milliseconds)
+            setInterval(fetchWeather, 1800000);
+        });
         document.addEventListener('DOMContentLoaded', function () {
             // Mobile menu toggle
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
