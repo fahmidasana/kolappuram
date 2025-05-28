@@ -23,7 +23,7 @@
             content: "\f3c2";
         }
 
-       
+
 
         /* From Uiverse.io by gharsh11032000 */
         .cardqw {
@@ -221,6 +221,117 @@
                 inset 0 0 20px rgba(255, 255, 255, 0.3),
                 inset 0 0 5px rgba(255, 255, 255, 0.5),
                 0 5px 5px rgba(0, 0, 0, 0.082);
+        }
+
+        /* From Uiverse.io by coslac */
+        /* From Uiverse.io by Smit-Prajapati */
+        .input-container {
+            display: flex;
+            background: white;
+            border-radius: 1rem;
+            background: linear-gradient(173deg, #23272f 0%, #14161a 100%);
+            box-shadow:
+                10px 10px 20px #0e1013,
+                -10px -10px 40px #383e4b;
+            padding: 0.3rem;
+            gap: 0.3rem;
+        }
+
+        .input-container input {
+            border-radius: 0.8rem;
+            background: #23272f;
+            box-shadow:
+                inset 5px 5px 10px #0e1013,
+                inset -5px -5px 10px #383e4b,
+                0px 0px 100px rgba(255, 212, 59, 0),
+                0px 0px 100px rgba(255, 102, 0, 0);
+            width: 100%;
+            flex-basis: 100%;
+            padding: 1rem;
+            border: none;
+            border: 1px solid transparent;
+            color: white;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .input-container input:focus {
+            border: 1px solid #ffd43b;
+            outline: none;
+            box-shadow:
+                inset 0px 0px 10px rgba(255, 102, 0, 0.5),
+                inset 0px 0px 10px rgba(255, 212, 59, 0.5),
+                0px 0px 100px rgba(255, 212, 59, 0.5),
+                0px 0px 100px rgba(255, 102, 0, 0.5);
+        }
+
+        @media (max-width: 500px) {
+            .input-container {
+                flex-direction: column;
+            }
+
+            .input-container input {
+                border-radius: 0.8rem;
+            }
+        }
+
+        /* game */
+        /* Snake Game Container (Hidden by Default) */
+        .hidden {
+            display: none !important;
+        }
+
+        #snake-game-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #222;
+            border: 4px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            z-index: 9999;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .game-header h2 {
+            margin: 0;
+            color: #4CAF50;
+        }
+
+        #close-game {
+            background: #ff4444;
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #game-canvas {
+            background: #111;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .game-controls {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #score {
+            font-weight: bold;
+            color: #4CAF50;
         }
 
         /*isometric prooyection*/
@@ -476,7 +587,7 @@
         }
 
 
-       
+
 
 
         /* From Uiverse.io by AlimurtuzaCodes */
@@ -717,11 +828,11 @@
                             </div>
                         </div> -->
                         </div>
-                        <button
+                        <!-- <button
                             class="bg-primary hover:bg-primary/90 text-white px-8 py-3 !rounded-button font-medium whitespace-nowrap cursor-pointer">
                             <a
                                 href="https://ml.wikipedia.org/wiki/%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82#:~:text=%E0%B4%AE%E0%B4%B2%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%9C%E0%B4%BF%E0%B4%B2%E0%B5%8D%E0%B4%B2%E0%B4%AF%E0%B4%BF%E0%B4%B2%E0%B5%86%20%E0%B4%85%E0%B4%AC%E0%B5%8D%E0%B4%A6%E0%B5%81%E0%B4%B1%E0%B4%B9%E0%B4%AE%E0%B4%BE%E0%B5%BB%20%E0%B4%A8%E0%B4%97%E0%B5%BC%20%E0%B4%AA%E0%B4%9E%E0%B5%8D%E0%B4%9A%E0%B4%BE%E0%B4%AF%E0%B4%A4%E0%B5%8D%E0%B4%A4%E0%B4%BF%E0%B4%B2%E0%B5%86,%E0%B4%AA%E0%B5%8B%E0%B4%B5%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%20%E0%B4%AA%E0%B4%BE%E0%B4%A4%20%E0%B4%95%E0%B5%8A%E0%B4%B3%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%81%E0%B4%B1%E0%B4%82%20%E0%B4%AE%E0%B5%81%E0%B4%A4%E0%B5%BD%20%E0%B4%A4%E0%B5%81%E0%B4%9F%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B5%81."></a>Discover
-                        </button>
+                        </button> -->
                         <!-- From Uiverse.io by AlimurtuzaCodes -->
 
                     </div>
@@ -829,55 +940,125 @@
 
     </section>
     <!-- seoson-->
-      <section id="amenities" class="py-20 bg-[#0F172A]">
+    <section id="amenities" class="py-20 bg-[#0F172A]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Best Seasons to Visit</h2>
-                
+
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-               
+
                 <!-- Amenity Card 4 -->
-                <div class="amenity-card  p-6 cursor-pointer" style="border-radius: 70% 93% 37% 63% / 13% 61% 41% 10% ;">
+                <div class="amenity-card  p-6 cursor-pointer"
+                    style="border-radius: 70% 93% 37% 63% / 13% 61% 41% 10% ;">
                     <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                        <svg  xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="yellow"  class="icon icon-tabler icons-tabler-filled icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 19a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1 -1m-4.95 -2.05a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1 -1.414 -1.414l1.414 -1.414a1 1 0 0 1 1.414 0m11.314 0l1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.414 -1.414a1 1 0 0 1 1.414 -1.414m-5.049 -9.836a5 5 0 1 1 -2.532 9.674a5 5 0 0 1 2.532 -9.674m-9.315 3.886a1 1 0 0 1 0 2h-2a1 1 0 0 1 0 -2zm18 0a1 1 0 0 1 0 2h-2a1 1 0 0 1 0 -2zm-16.364 -6.778l1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.414 -1.414a1 1 0 0 1 1.414 -1.414m14.142 0a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 0 1 -1.414 -1.414l1.414 -1.414a1 1 0 0 1 1.414 0m-7.778 -3.222a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1 -1" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="yellow"
+                            class="icon icon-tabler icons-tabler-filled icon-tabler-sun-high">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M12 19a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1 -1m-4.95 -2.05a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1 -1.414 -1.414l1.414 -1.414a1 1 0 0 1 1.414 0m11.314 0l1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.414 -1.414a1 1 0 0 1 1.414 -1.414m-5.049 -9.836a5 5 0 1 1 -2.532 9.674a5 5 0 0 1 2.532 -9.674m-9.315 3.886a1 1 0 0 1 0 2h-2a1 1 0 0 1 0 -2zm18 0a1 1 0 0 1 0 2h-2a1 1 0 0 1 0 -2zm-16.364 -6.778l1.414 1.414a1 1 0 0 1 -1.414 1.414l-1.414 -1.414a1 1 0 0 1 1.414 -1.414m14.142 0a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 0 1 -1.414 -1.414l1.414 -1.414a1 1 0 0 1 1.414 0m-7.778 -3.222a1 1 0 0 1 1 1v2a1 1 0 0 1 -2 0v-2a1 1 0 0 1 1 -1" />
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Spring (March-May)</h3>
                     <p class="text-gray-300 mb-4">
-                      Mild temperatures (15-25°C), <br> blooming flowers, and perfect for hiking. The annual Flower Festival in April <br> is a major attraction.
+                        Mild temperatures (15-25°C), <br> blooming flowers, and perfect for hiking. The annual Flower
+                        Festival in April <br> is a major attraction.
                     </p>
 
                 </div>
                 <!-- Amenity Card 5 -->
-                <div class="amenity-card  p-6 cursor-pointer" style="border-radius: 69% 75% 70% 75% / 50% 54% 53% 49% ;">
+                <div class="amenity-card  p-6 cursor-pointer"
+                    style="border-radius: 69% 75% 70% 75% / 50% 54% 53% 49% ;">
                     <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                      
-                        <svg  xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="skyblue"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-snowflake"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 4l2 1l2 -1" /><path d="M12 2v6.5l3 1.72" /><path d="M17.928 6.268l.134 2.232l1.866 1.232" /><path d="M20.66 7l-5.629 3.25l.01 3.458" /><path d="M19.928 14.268l-1.866 1.232l-.134 2.232" /><path d="M20.66 17l-5.629 -3.25l-2.99 1.738" /><path d="M14 20l-2 -1l-2 1" /><path d="M12 22v-6.5l-3 -1.72" /><path d="M6.072 17.732l-.134 -2.232l-1.866 -1.232" /><path d="M3.34 17l5.629 -3.25l-.01 -3.458" /><path d="M4.072 9.732l1.866 -1.232l.134 -2.232" /><path d="M3.34 7l5.629 3.25l2.99 -1.738" /></svg>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+                            stroke="skyblue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-snowflake">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 4l2 1l2 -1" />
+                            <path d="M12 2v6.5l3 1.72" />
+                            <path d="M17.928 6.268l.134 2.232l1.866 1.232" />
+                            <path d="M20.66 7l-5.629 3.25l.01 3.458" />
+                            <path d="M19.928 14.268l-1.866 1.232l-.134 2.232" />
+                            <path d="M20.66 17l-5.629 -3.25l-2.99 1.738" />
+                            <path d="M14 20l-2 -1l-2 1" />
+                            <path d="M12 22v-6.5l-3 -1.72" />
+                            <path d="M6.072 17.732l-.134 -2.232l-1.866 -1.232" />
+                            <path d="M3.34 17l5.629 -3.25l-.01 -3.458" />
+                            <path d="M4.072 9.732l1.866 -1.232l.134 -2.232" />
+                            <path d="M3.34 7l5.629 3.25l2.99 -1.738" />
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Winter (December-February)</h3>
-                    <p class="text-gray-300 mb-4">Snow-covered landscape (0-10°C), winter sports, and cozy fireside stays. Christmas markets are magical.</p>
-                    
+                    <p class="text-gray-300 mb-4">Snow-covered landscape (0-10°C), winter sports, and cozy fireside
+                        stays. Christmas markets are magical.</p>
+
                 </div>
                 <!-- Amenity Card 6 -->
                 <div class="amenity-card  p-6 cursor-pointer" style="border-radius: 89% 68% 37% 63% / 50% 3% 5% 49% ;">
                     <div class="w-16 h-16 flex items-center justify-center text-primary mb-4">
-                       <svg  xmlns="http://www.w3.org/2000/svg"  width="50"  height="50"  viewBox="0 0 24 24"  fill="none"  stroke="skyblue"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-beach"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M17.553 16.75a7.5 7.5 0 0 0 -10.606 0" /><path d="M18 3.804a6 6 0 0 0 -8.196 2.196l10.392 6a6 6 0 0 0 -2.196 -8.196z" /><path d="M16.732 10c1.658 -2.87 2.225 -5.644 1.268 -6.196c-.957 -.552 -3.075 1.326 -4.732 4.196" /><path d="M15 9l-3 5.196" /><path d="M3 19.25a2.4 2.4 0 0 1 1 -.25a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 1 .25" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
+                            stroke="skyblue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-beach">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M17.553 16.75a7.5 7.5 0 0 0 -10.606 0" />
+                            <path d="M18 3.804a6 6 0 0 0 -8.196 2.196l10.392 6a6 6 0 0 0 -2.196 -8.196z" />
+                            <path
+                                d="M16.732 10c1.658 -2.87 2.225 -5.644 1.268 -6.196c-.957 -.552 -3.075 1.326 -4.732 4.196" />
+                            <path d="M15 9l-3 5.196" />
+                            <path
+                                d="M3 19.25a2.4 2.4 0 0 1 1 -.25a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 1 .25" />
+                        </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Summer (June-August)</h3>
-                    <p class="text-gray-300 mb-4">Warm but pleasant (20-30°C),  <br>great for water activities in the mountain lakes. Ideal escape from city heat.</p>
-                   
+                    <p class="text-gray-300 mb-4">Warm but pleasant (20-30°C), <br>great for water activities in the
+                        mountain lakes. Ideal escape from city heat.</p>
+
                 </div>
-                
+
             </div>
         </div>
     </section>
-     <!-- Gallery Section -->
+
+    <!-- 
+    game -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Website</title>
+        <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+    </head>
+
+    <body>
+        <!-- Your normal website content here -->
+
+        <!-- Hidden Snake Game (Initially invisible) -->
+        <div id="snake-game-container" class="hidden">
+            <div class="game-header">
+                <h2>🐍 Secret Snake Game!</h2>
+                <button id="close-game">X</button>
+            </div>
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+            <div class="game-controls">
+                <p>Score: <span id="score">0</span></p>
+                <p>Use <strong>Arrow Keys</strong> to move</p>
+            </div>
+        </div>
+
+        <script src="snake-game.js"></script> <!-- Link to JS -->
+    </body>
+
+    </html>
+    <!-- Gallery Section -->
     <section id="Scenery" class="py-20 bg-[#1E293B]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Scenery</h2>
-               
+
                 <div class="w-20 h-1 bg-primary mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -887,11 +1068,11 @@
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
-                          
-                            <p class="text-sm">Nature’s finest colors paint every corner of our village.
-Come explore the simple, pure charm of scenic landscapes.
 
-</p>
+                            <p class="text-sm">Nature’s finest colors paint every corner of our village.
+                                Come explore the simple, pure charm of scenic landscapes.
+
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -901,11 +1082,11 @@ Come explore the simple, pure charm of scenic landscapes.
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
-                           
-                            <p class="text-sm">Wander through green fields and quiet hillsides.
-Discover the natural beauty that defines our village life.
 
-</p>
+                            <p class="text-sm">Wander through green fields and quiet hillsides.
+                                Discover the natural beauty that defines our village life.
+
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -915,7 +1096,7 @@ Discover the natural beauty that defines our village life.
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
-                          
+
                             <p class="text-sm">The football lovers in our village bring the ground to life with their
                                 passion, teamwork, and endless love for the beautiful game.</p>
                         </div>
@@ -928,7 +1109,7 @@ Discover the natural beauty that defines our village life.
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
                             <p class="text-sm">Breathe in the calm of nature’s untouched beauty.
-Our village offers views that soothe the soul and inspire peace.</p>
+                                Our village offers views that soothe the soul and inspire peace.</p>
                         </div>
                     </div>
                 </div>
@@ -938,9 +1119,9 @@ Our village offers views that soothe the soul and inspire peace.</p>
                     <div
                         class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <div class="text-white text-center p-4">
-                            
+
                             <p class="text-sm">A place where every view tells a story of peace and purity.
-Experience the refreshing embrace of nature’s finest sights.</p>
+                                Experience the refreshing embrace of nature’s finest sights.</p>
                         </div>
                     </div>
                 </div>
@@ -1260,7 +1441,8 @@ Experience the refreshing embrace of nature’s finest sights.</p>
                         <div class="card__contentqw">
                             <p class="card__titleqw">Kallan Riyas
                             </p>
-                            <p class="card__descriptionqw">MOB :  9947307618<br>email : riyas@gmail.com<br>18 WARD MEMBER <br>Social Worker</p>
+                            <p class="card__descriptionqw">MOB : 9947307618<br>email : riyas@gmail.com<br>18 WARD MEMBER
+                                <br>Social Worker</p>
                         </div>
                     </div>
                 </div>
@@ -1559,7 +1741,11 @@ Experience the refreshing embrace of nature’s finest sights.</p>
             </div>
         </div>
     </section>
-   
+    <div><!-- From Uiverse.io by coslac -->
+        <div class="input-container">
+            <input placeholder="Type 'snake'" type="text" />
+        </div>
+    </div>
 
 
     <!-- Newsletter Section -->
@@ -2065,6 +2251,122 @@ Experience the refreshing embrace of nature’s finest sights.</p>
                     }
                 });
             });
+        });
+        // Secret Key Combo: User must press S + N + A + K + E in order
+        const SECRET_CODE = "snake";
+        let inputBuffer = "";
+
+        // Game Variables
+        const canvas = document.getElementById("game-canvas");
+        const ctx = canvas.getContext("2d");
+        const scoreElement = document.getElementById("score");
+        const gameContainer = document.getElementById("snake-game-container");
+        const closeButton = document.getElementById("close-game");
+
+        let snake = [{ x: 200, y: 200 }];
+        let food = { x: 0, y: 0 };
+        let direction = "RIGHT";
+        let score = 0;
+        let gameSpeed = 150; // ms
+        let gameLoop;
+
+        // Listen for the secret code
+        document.addEventListener("keydown", (e) => {
+            inputBuffer += e.key.toLowerCase();
+            if (inputBuffer.length > SECRET_CODE.length) {
+                inputBuffer = inputBuffer.slice(-SECRET_CODE.length);
+            }
+            if (inputBuffer === SECRET_CODE) {
+                gameContainer.classList.remove("hidden");
+                startGame();
+                inputBuffer = ""; // Reset buffer
+            }
+        });
+
+        // Close game button
+        closeButton.addEventListener("click", () => {
+            gameContainer.classList.add("hidden");
+            clearInterval(gameLoop);
+        });
+
+        // Initialize & Start Game
+        function startGame() {
+            snake = [{ x: 200, y: 200 }];
+            direction = "RIGHT";
+            score = 0;
+            scoreElement.textContent = score;
+            spawnFood();
+            if (gameLoop) clearInterval(gameLoop);
+            gameLoop = setInterval(updateGame, gameSpeed);
+        }
+
+        // Spawn food at random position
+        function spawnFood() {
+            food = {
+                x: Math.floor(Math.random() * 20) * 20,
+                y: Math.floor(Math.random() * 20) * 20,
+            };
+        }
+
+        // Main Game Loop
+        function updateGame() {
+            // Move Snake
+            const head = { ...snake[0] };
+
+            switch (direction) {
+                case "UP": head.y -= 20; break;
+                case "DOWN": head.y += 20; break;
+                case "LEFT": head.x -= 20; break;
+                case "RIGHT": head.x += 20; break;
+            }
+
+            // Check collisions
+            if (
+                head.x < 0 || head.x >= canvas.width ||
+                head.y < 0 || head.y >= canvas.height ||
+                snake.some(segment => segment.x === head.x && segment.y === head.y)
+            ) {
+                alert(`Game Over! Score: ${score}`);
+                startGame(); // Restart
+                return;
+            }
+
+            snake.unshift(head);
+
+            // Check if snake eats food
+            if (head.x === food.x && head.y === food.y) {
+                score += 10;
+                scoreElement.textContent = score;
+                spawnFood();
+            } else {
+                snake.pop(); // Remove tail if no food eaten
+            }
+
+            // Draw everything
+            ctx.fillStyle = "#111";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Snake
+            snake.forEach(segment => {
+                ctx.fillStyle = "#4CAF50";
+                ctx.fillRect(segment.x, segment.y, 18, 18);
+            });
+
+            // Draw Food
+            ctx.fillStyle = "#FF4444";
+            ctx.fillRect(food.x, food.y, 18, 18);
+        }
+
+        // Keyboard Controls
+        document.addEventListener("keydown", (e) => {
+            if (!gameContainer.classList.contains("hidden")) {
+                switch (e.key) {
+                    case "ArrowUp": if (direction !== "DOWN") direction = "UP"; break;
+                    case "ArrowDown": if (direction !== "UP") direction = "DOWN"; break;
+                    case "ArrowLeft": if (direction !== "RIGHT") direction = "LEFT"; break;
+                    case "ArrowRight": if (direction !== "LEFT") direction = "RIGHT"; break;
+                }
+            }
         });
     </script>
 </body>
