@@ -274,66 +274,6 @@
             }
         }
 
-        /* game */
-        /* Snake Game Container (Hidden by Default) */
-        .hidden {
-            display: none !important;
-        }
-
-        #snake-game-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #222;
-            border: 4px solid #4CAF50;
-            border-radius: 10px;
-            padding: 20px;
-            z-index: 9999;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        .game-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .game-header h2 {
-            margin: 0;
-            color: #4CAF50;
-        }
-
-        #close-game {
-            background: #ff4444;
-            border: none;
-            color: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        #game-canvas {
-            background: #111;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .game-controls {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        #score {
-            font-weight: bold;
-            color: #4CAF50;
-        }
-
         /*isometric prooyection*/
         .iso-pro {
             transition: 0.5s;
@@ -1021,38 +961,10 @@
         </div>
     </section>
 
-    <!-- 
-    game -->
-    <!DOCTYPE html>
-    <html lang="en">
+   
+   
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Website</title>
-        <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
-    </head>
-
-    <body>
-        <!-- Your normal website content here -->
-
-        <!-- Hidden Snake Game (Initially invisible) -->
-        <div id="snake-game-container" class="hidden">
-            <div class="game-header">
-                <h2>🐍 Secret Snake Game!</h2>
-                <button id="close-game">X</button>
-            </div>
-            <canvas id="game-canvas" width="400" height="400"></canvas>
-            <div class="game-controls">
-                <p>Score: <span id="score">0</span></p>
-                <p>Use <strong>Arrow Keys</strong> to move</p>
-            </div>
-        </div>
-
-        <script src="snake-game.js"></script> <!-- Link to JS -->
-    </body>
-
-    </html>
+    
     <!-- Gallery Section -->
     <section id="Scenery" class="py-20 bg-[#1E293B]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1741,11 +1653,7 @@
             </div>
         </div>
     </section>
-    <div><!-- From Uiverse.io by coslac -->
-        <div class="input-container">
-            <input placeholder="Type 'snake'" type="text" />
-        </div>
-    </div>
+   
 
 
     <!-- Newsletter Section -->
@@ -2252,172 +2160,7 @@
                 });
             });
         });
-       // Secret Key Combo: User must press S + N + A + K + E in order
-const SECRET_CODE = "snake";
-let inputBuffer = "";
-
-// Game Variables
-const canvas = document.getElementById("game-canvas");
-const ctx = canvas.getContext("2d");
-const scoreElement = document.getElementById("score");
-const gameContainer = document.getElementById("snake-game-container");
-const closeButton = document.getElementById("close-game");
-
-let snake = [{ x: 200, y: 200 }];
-let food = { x: 0, y: 0 };
-let direction = "RIGHT";
-let score = 0;
-let gameSpeed = 150; // ms
-let gameLoop;
-
-// Touch control variables
-let touchStartX = 0;
-let touchStartY = 0;
-let touchEndX = 0;
-let touchEndY = 0;
-const touchThreshold = 30; // Minimum pixel movement for a swipe
-
-// Listen for the secret code
-document.addEventListener("keydown", (e) => {
-    inputBuffer += e.key.toLowerCase();
-    if (inputBuffer.length > SECRET_CODE.length) {
-        inputBuffer = inputBuffer.slice(-SECRET_CODE.length);
-    }
-    if (inputBuffer === SECRET_CODE) {
-        gameContainer.classList.remove("hidden");
-        startGame();
-        inputBuffer = ""; // Reset buffer
-    }
-});
-
-// Close game button
-closeButton.addEventListener("click", () => {
-    gameContainer.classList.add("hidden");
-    clearInterval(gameLoop);
-});
-
-// Initialize & Start Game
-function startGame() {
-    snake = [{ x: 200, y: 200 }];
-    direction = "RIGHT";
-    score = 0;
-    scoreElement.textContent = score;
-    spawnFood();
-    if (gameLoop) clearInterval(gameLoop);
-    gameLoop = setInterval(updateGame, gameSpeed);
-}
-
-// Spawn food at random position
-function spawnFood() {
-    food = {
-        x: Math.floor(Math.random() * 20) * 20,
-        y: Math.floor(Math.random() * 20) * 20,
-    };
-}
-
-// Main Game Loop
-function updateGame() {
-    // Move Snake
-    const head = { ...snake[0] };
-
-    switch (direction) {
-        case "UP": head.y -= 20; break;
-        case "DOWN": head.y += 20; break;
-        case "LEFT": head.x -= 20; break;
-        case "RIGHT": head.x += 20; break;
-    }
-
-    // Check collisions
-    if (
-        head.x < 0 || head.x >= canvas.width ||
-        head.y < 0 || head.y >= canvas.height ||
-        snake.some(segment => segment.x === head.x && segment.y === head.y)
-    ) {
-        alert(`Game Over! Score: ${score}`);
-        startGame(); // Restart
-        return;
-    }
-
-    snake.unshift(head);
-
-    // Check if snake eats food
-    if (head.x === food.x && head.y === food.y) {
-        score += 10;
-        scoreElement.textContent = score;
-        spawnFood();
-    } else {
-        snake.pop(); // Remove tail if no food eaten
-    }
-
-    // Draw everything
-    ctx.fillStyle = "#111";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Draw Snake
-    snake.forEach(segment => {
-        ctx.fillStyle = "#4CAF50";
-        ctx.fillRect(segment.x, segment.y, 18, 18);
-    });
-
-    // Draw Food
-    ctx.fillStyle = "#FF4444";
-    ctx.fillRect(food.x, food.y, 18, 18);
-}
-
-// Keyboard Controls
-document.addEventListener("keydown", (e) => {
-    if (!gameContainer.classList.contains("hidden")) {
-        switch (e.key) {
-            case "ArrowUp": if (direction !== "DOWN") direction = "UP"; break;
-            case "ArrowDown": if (direction !== "UP") direction = "DOWN"; break;
-            case "ArrowLeft": if (direction !== "RIGHT") direction = "LEFT"; break;
-            case "ArrowRight": if (direction !== "LEFT") direction = "RIGHT"; break;
-        }
-    }
-});
-
-// Touch Controls
-canvas.addEventListener('touchstart', e => {
-    e.preventDefault(); // Prevent scrolling
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-}, false);
-
-canvas.addEventListener('touchmove', e => {
-    e.preventDefault(); // Prevent scrolling
-    // No need to track touchmove for continuous input here, only end position matters for a swipe
-}, false);
-
-canvas.addEventListener('touchend', e => {
-    e.preventDefault(); // Prevent scrolling
-    touchEndX = e.changedTouches[0].clientX;
-    touchEndY = e.changedTouches[0].clientY;
-
-    handleGesture();
-}, false);
-
-function handleGesture() {
-    const dx = touchEndX - touchStartX;
-    const dy = touchEndY - touchStartY;
-
-    if (Math.abs(dx) > Math.abs(dy)) { // Horizontal swipe
-        if (Math.abs(dx) > touchThreshold) {
-            if (dx > 0 && direction !== "LEFT") {
-                direction = "RIGHT";
-            } else if (dx < 0 && direction !== "RIGHT") {
-                direction = "LEFT";
-            }
-        }
-    } else { // Vertical swipe
-        if (Math.abs(dy) > touchThreshold) {
-            if (dy > 0 && direction !== "UP") {
-                direction = "DOWN";
-            } else if (dy < 0 && direction !== "DOWN") {
-                direction = "UP";
-            }
-        }
-    }
-}
+       
     </script>
 </body>
 
